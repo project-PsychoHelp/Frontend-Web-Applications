@@ -1,0 +1,13 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.blue-text {
+  color: skyblue;
+  font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
+  font-weight: bold;
+}
+.tittle {
+          color: black;
+          font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
+          font-weight: bold;
+        }

@@ -1,0 +1,23 @@
+
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "ESTO ES UN EJEMPLO",
+      "age": 26,
+      "address": "ESTO ES UN EJEMPLO"
+    },
+    {
+      "id": 2,
+      "name": "ESTO ES UN EJEMPLO",
+      "age": 34,
+      "address": "ESTO ES UN EJEMPLO"
+    },
+    {
+      "id": 3,
+      "name": "William Norton",
+      "age": 38,
+      "address": "One Secret Place"
+    }
+  ]
+}
