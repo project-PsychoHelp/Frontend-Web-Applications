@@ -12,6 +12,17 @@
     "Completado": "Completado",
     "Pendiente": "Pendiente"
   },
+  "CAREERS": {
+    "TITLE": "Carreras recomendadas",
+    "VIEW_ALL": "Ver todas las carreras recomendadas",
+    "Ingeniería en Sistemas": "Ingeniería en Sistemas",
+    "Psicología": "Psicología",
+    "Arquitectura": "Arquitectura"
+  },
+
+  "92% de coincidencia": "92% de coincidencia",
+  "87% de coincidencia": "87% de coincidencia",
+  "83% de coincidencia": "83% de coincidencia",
   "footer": {
     "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
     "intro": "Desarrollado ",
