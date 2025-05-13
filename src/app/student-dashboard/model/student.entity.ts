@@ -14,7 +14,7 @@ export class Student {
     this.fullName = data.fullName || '';
     this.userType = 'estudiante'; // Always estudiante as per your requirement
     this.progress = new Progress(data.progress || {});
-    this.recommendedCareers = data.recommendedCareers || [];
+    this.recommendedCareers = (data.recommendedCareers || []).map(career => new Career(career));
   }
 
   getDisplayName(): string {
