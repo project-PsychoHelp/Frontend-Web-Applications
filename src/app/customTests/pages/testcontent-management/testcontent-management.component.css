@@ -10,3 +10,42 @@ table {
 tr.editable-row {
   background-color: lightblue;
 }
+
+.card-container {
+  display: flex;
+  flex-direction: column; /* Asegura que las tarjetas estén en una columna */
+  gap: 20px; /* Espaciado entre tarjetas */
+  margin: 20px 0;
+}
+
+.testcontent-card {
+  background-color: #fffaf0; /* Fondo crema */
+  border: 2px solid #f4a460; /* Borde naranja */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+  padding: 16px;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+mat-card-title {
+  font-size: 1.5rem; /* Título más grande */
+  font-weight: bold;
+  color: #2f4f4f; /* Gris oscuro */
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: #696969; /* Gris */
+}
+
+mat-card-content p {
+  color: #333; /* Texto en gris oscuro */
+}
+
+mat-card-content ul {
+  padding-left: 20px; /* Espaciado para la lista */
+}
+
+mat-card-content li {
+  margin-bottom: 5px; /* Espaciado entre opciones */
+}

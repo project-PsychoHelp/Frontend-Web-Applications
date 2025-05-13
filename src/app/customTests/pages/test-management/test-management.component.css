@@ -10,3 +10,68 @@ table {
 tr.editable-row {
   background-color: lightblue;
 }
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espaciado entre tarjetas */
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.test-card, .testcontent-card {
+  width: 300px; /* Ancho de cada tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para las tarjetas */
+  border-radius: 8px; /* Bordes redondeados */
+  overflow: hidden;
+}
+
+mat-card {
+  padding: 16px;
+}
+
+mat-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  font-size: 1rem;
+  color: gray;
+}
+
+.test-card {
+  background-color: #f0f8ff; /* Fondo azul claro */
+  border: 2px solid #87cefa; /* Borde azul */
+}
+
+.testcontent-card {
+  background-color: #fffaf0; /* Fondo crema */
+  border: 2px solid #f4a460; /* Borde naranja */
+}
+
+mat-card-title {
+  color: #2f4f4f; /* Título en gris oscuro */
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  font-weight: bold;
+}
+
+mat-card-subtitle {
+  color: #696969; /* Subtítulo en gris */
+}
+
+mat-card-content p {
+  color: #333; /* Texto en gris oscuro */
+}
+/* Estilo para el subtítulo de Category */
+mat-card-subtitle.category {
+  color: #ff5722; /* Naranja */
+  font-weight: bold;
+}
+
+/* Estilo para el texto de IsFree */
+mat-card-content p.is-free {
+
+  color: #4caf50; /* Verde */
+  font-weight: bold;
+}

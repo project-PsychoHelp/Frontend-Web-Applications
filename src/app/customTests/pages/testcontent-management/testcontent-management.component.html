@@ -1,3 +1,25 @@
+<!-- Tarjetas de testcontent -->
+<div class="card-container">
+  <h3>{{ 'title.testcontents' | translate }}</h3>
+
+  <mat-card class="testcontent-card" *ngFor="let testcontent of dataSource.data">
+    <mat-card-header>
+      <mat-card-title>{{ testcontent.question }}</mat-card-title>
+      <mat-card-subtitle>{{ 'testcontent.points' | translate }}: {{ testcontent.points }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ 'testcontent.options' | translate }}:</p>
+      <ul>
+        <li *ngFor="let option of testcontent.options">{{ option }}</li>
+      </ul>
+      <p>{{ 'testcontent.correctAnswer' | translate }}: {{ testcontent.correctAnswer }}</p>
+      <p>{{ 'testcontent.explanation' | translate }}: {{ testcontent.explanation }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
 <!-- Catálogo de testscontent -->
 <div class="table-wrapper">
   <h3>{{ 'title.content' | translate }}</h3>

@@ -1,17 +1,18 @@
 <!-- Tarjetas de tests -->
+<h3>{{ 'title.tests' | translate }}</h3>
 <div class="card-container">
-  <h3>{{ 'title.tests' | translate }}</h3>
+
 
   <mat-card class="test-card" *ngFor="let test of dataSource.data">
     <mat-card-header>
       <mat-card-title>{{ test.title }}</mat-card-title>
-      <mat-card-subtitle>{{ 'test.category' | translate }}: {{ test.category }}</mat-card-subtitle>
+      <mat-card-subtitle class="category">{{ 'test.category' | translate }}: {{ test.category }}</mat-card-subtitle>
     </mat-card-header>
     <mat-card-content>
       <p>{{ 'test.description' | translate }}: {{ test.description }}</p>
       <p>{{ 'test.recommendationPercentage' | translate }}: {{ test.recommendationPercentage }}%</p>
       <p>{{ 'test.numberOfQuestions' | translate }}: {{ test.numberOfQuestions }}</p>
-      <p>{{ 'test.isFree' | translate }}: {{ test.isFree ? ('Yes' | translate) : ('No' | translate) }}</p>
+      <p class="is-free">{{ 'test.isFree' | translate }}: {{ test.isFree ? ('Yes' | translate) : ('No' | translate) }}</p>
     </mat-card-content>
 
   </mat-card>

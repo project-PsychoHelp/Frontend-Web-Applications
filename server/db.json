@@ -17,6 +17,33 @@
       "numberOfQuestions": 12,
       "isFree": true,
       "id": 4
+    },
+    {
+      "title": "dwqe",
+      "description": "eqwe",
+      "category": "eqweqw",
+      "recommendationPercentage": 15,
+      "numberOfQuestions": 15,
+      "isFree": false,
+      "id": 5
+    },
+    {
+      "title": "weq",
+      "description": "ewq",
+      "category": "eqeq",
+      "recommendationPercentage": 15,
+      "numberOfQuestions": 18,
+      "isFree": false,
+      "id": 6
+    },
+    {
+      "title": "eqwe",
+      "description": "eqweqw",
+      "category": "eqwe",
+      "recommendationPercentage": 18,
+      "numberOfQuestions": 15,
+      "isFree": false,
+      "id": 7
     }
   ],
   "testscontent": [
