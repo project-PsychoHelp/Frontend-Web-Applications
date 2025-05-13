@@ -1,23 +1,31 @@
-
 {
-  "students": [
+  "premium_plans": [
     {
-      "id": 1,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 26,
-      "address": "ESTO ES UN EJEMPLO"
+      "plan_id": "plan_001",
+      "plan_name": "Básico",
+      "description": "Acceso limitado con funciones esenciales",
+      "price": 5.99,
+      "duration": "1 mes",
+      "max_users": 1,
+      "is_active": true
     },
     {
-      "id": 2,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 34,
-      "address": "ESTO ES UN EJEMPLO"
+      "plan_id": "plan_002",
+      "plan_name": "Pro",
+      "description": "Acceso completo con funciones avanzadas",
+      "price": 12.99,
+      "duration": "1 mes",
+      "max_users": 1,
+      "is_active": true
     },
     {
-      "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
+      "plan_id": "plan_003",
+      "plan_name": "Empresa",
+      "description": "Plan para equipos con múltiples usuarios",
+      "price": 99.99,
+      "duration": "1 año",
+      "max_users": 100,
+      "is_active": false
     }
   ]
 }
