@@ -26,10 +26,11 @@ export class AppComponent implements OnInit  {
   title = 'PyschoHelp';
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
-  options = [
 
-  ];
 
+  options =[
+    { icon: 'test', path: '/customTests/tests', title: 'Tests'},
+    ]
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');

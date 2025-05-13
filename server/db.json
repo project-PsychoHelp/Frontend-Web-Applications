@@ -1,23 +1,49 @@
-
 {
-  "students": [
+  "tests": [
     {
       "id": 1,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 26,
-      "address": "ESTO ES UN EJEMPLO"
+      "title": "Matemáticas Básicas",
+      "description": "Un test para evaluar conocimientos básicos de matemáticas.",
+      "category": "Matemáticas",
+      "recommendationPercentage": 80,
+      "numberOfQuestions": 10,
+      "isFree": true
     },
     {
       "id": 2,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 34,
-      "address": "ESTO ES UN EJEMPLO"
+      "title": "Historia Universal",
+      "description": "Evalúa tus conocimientos sobre eventos históricos importantes.",
+      "category": "Historia",
+      "recommendationPercentage": 70,
+      "numberOfQuestions": 15,
+      "isFree": false
     },
     {
       "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
+      "title": "Ciencias Naturales",
+      "description": "Test sobre conceptos básicos de ciencias naturales.",
+      "category": "Ciencias",
+      "recommendationPercentage": 85,
+      "numberOfQuestions": 20,
+      "isFree": true
+    },
+    {
+      "isFree": false,
+      "title": "ewq",
+      "description": "eqwe",
+      "category": "eqwe",
+      "recommendationPercentage": 3,
+      "numberOfQuestions": 3,
+      "id": 4
+    },
+    {
+      "isFree": false,
+      "title": "eqwe",
+      "description": "ewq",
+      "category": "eqweqw",
+      "recommendationPercentage": 4,
+      "numberOfQuestions": 4,
+      "id": 5
     }
   ]
 }

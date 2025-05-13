@@ -3,5 +3,21 @@
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",
     "intro": "Developed ",
     "author": "by {{ team }} Team"
+  },
+
+  "test": {
+    "title": "Title",
+    "description": "Description",
+    "category": "Category",
+    "recommendationPercentage": "Recommendation Percentage",
+    "numberOfQuestions": "Number of Questions",
+    "isFree": "Is Free"
+  },
+  "title": {
+    "tests": "TEST CATALOG",
+    "add": "New Student",
+    "edit": "ADD NEW TEST TYPES"
   }
 }
+
+
