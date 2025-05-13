@@ -1,0 +1,94 @@
+.progress-section {
+  background: #f5f7fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 16px;
+}
+
+.overall-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.progress-label {
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 16px;
+}
+
+mat-progress-bar {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+}
+
+.progress-percentage {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 16px;
+}
+
+.test-cards {
+  display: flex;
+  gap: 16px;
+}
+
+.test-card {
+  flex: 1;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.test-icon {
+  font-size: 24px;
+  &.completed {
+    color: #4caf50; /* Green for completed */
+  }
+  &:not(.completed) {
+    color: #ff9800; /* Orange for pending */
+  }
+}
+
+.test-info {
+  flex: 1;
+}
+
+.test-info h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.test-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.test-status {
+  font-size: 14px;
+  font-weight: 500;
+  &.completed {
+    color: #4caf50;
+  }
+  &:not(.completed) {
+    color: #ff9800;
+  }
+}
