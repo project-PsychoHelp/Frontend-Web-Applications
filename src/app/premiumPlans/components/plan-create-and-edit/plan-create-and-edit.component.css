@@ -1,0 +1,30 @@
+.form-section {
+  display: table;
+  background-color: #f9f9f9; /* Color ligeramente más claro que blanco */
+  padding: 16px;
+  border-radius: 6px;
+}
+
+.form-row {
+  display: table-cell;
+  max-width: 2400px;
+  vertical-align: top;
+}
+
+.form-row .mat-form-field {
+  margin-right: 8px;
+  background-color: #fcfcfc; /* Un tono casi blanco */
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.form-row .mat-raised-button {
+  margin-right: 8px;
+  font-size: 13px; /* Ligero ajuste */
+  padding: 6px 12px; /* Ligeramente más compacto */
+}
+
+.form-row #age-form-field {
+  margin-right: 8px;
+  width: 15%;
+}

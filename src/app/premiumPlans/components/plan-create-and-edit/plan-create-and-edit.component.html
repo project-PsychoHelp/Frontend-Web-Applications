@@ -1,0 +1,58 @@
+<!-- Create and Edit Form -->
+<h4>{{ editMode ? ('plan.editTitle' | translate) : ('plan.createTitle' | translate) }}</h4>
+
+<div class="form-section">
+  <form (ngSubmit)="onSubmit()" #planForm="ngForm" class="form-row">
+
+    <!-- Plan Name -->
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="{{ 'plan.planName' | translate }}" name="planName" required [(ngModel)]="plan.planName">
+    </mat-form-field>
+
+    <!-- Plan ID (readonly or auto-generated) -->
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="{{ 'plan.id' | translate }}" name="id" required [(ngModel)]="plan.id" [readonly]="editMode">
+    </mat-form-field>
+
+    <!-- Description -->
+    <mat-form-field appearance="fill">
+      <textarea matInput placeholder="{{ 'plan.description' | translate }}" name="description" required [(ngModel)]="plan.description"></textarea>
+    </mat-form-field>
+
+    <!-- Price -->
+    <mat-form-field appearance="fill">
+      <input matInput type="number" placeholder="{{ 'plan.price' | translate }}" name="price" required [(ngModel)]="plan.price" min="0" step="0.01">
+    </mat-form-field>
+
+    <!-- Duration -->
+    <mat-form-field appearance="fill">
+      <input matInput placeholder="{{ 'plan.duration' | translate }}" name="duration" required [(ngModel)]="plan.duration">
+    </mat-form-field>
+
+    <!-- Max Users -->
+    <mat-form-field appearance="fill">
+      <input matInput type="number" placeholder="{{ 'plan.maxUsers' | translate }}" name="maxUsers" required [(ngModel)]="plan.maxUsers" min="1">
+    </mat-form-field>
+
+    <!-- Is Active -->
+    <mat-form-field appearance="fill">
+      <mat-label>{{ 'plan.isActive' | translate }}</mat-label>
+      <mat-select name="isActive" required [(ngModel)]="plan.isActive">
+        <mat-option [value]="true">{{ 'Yes' | translate }}</mat-option>
+        <mat-option [value]="false">{{ 'No' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <!-- Action Buttons -->
+    <ng-container>
+      @if (editMode === true) {
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      }
+      @else {
+      <button mat-raised-button color="primary">Add</button>
+      }
+    </ng-container>
+
+  </form>
+</div>

@@ -1,0 +1,12 @@
+.table-wrapper {
+  width: 1080px; /* Ligeramente más ancho */
+  margin: 60px auto; /* Un poco más de margen vertical */
+}
+
+table {
+  width: 100%;
+}
+
+tr.editable-row {
+  background-color: #d0ebff; /* Azul claro más suave */
+}

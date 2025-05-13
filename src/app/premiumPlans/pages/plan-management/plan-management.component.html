@@ -1,0 +1,90 @@
+<!-- Tarjetas de planes -->
+<div class="card-container">
+  <h3>{{ 'title.plans' | translate }}</h3>
+
+  <mat-card class="test-card" *ngFor="let plan of dataSource.data">
+    <mat-card-header>
+      <mat-card-title>{{ plan.planName }}</mat-card-title>
+      <mat-card-subtitle>{{ 'plan.id' | translate }}: {{ plan.id }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ 'plan.description' | translate }}: {{ plan.description }}</p>
+      <p>{{ 'plan.price' | translate }}: {{ plan.price | currency }}</p>
+      <p>{{ 'plan.duration' | translate }}: {{ plan.duration }}</p>
+      <p>{{ 'plan.maxUsers' | translate }}: {{ plan.maxUsers }}</p>
+      <p>{{ 'plan.isActive' | translate }}: {{ plan.isActive ? ('Yes' | translate) : ('No' | translate) }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<!-- Catálogo de planes -->
+<div class="table-wrapper">
+  <h3>{{ 'title.plans' | translate }}</h3>
+
+  <!-- Add/Edit Form -->
+  <app-plan-create-and-edit
+    (editCanceled)="onCancelEdit()"
+    (planAdded)="onPlanAdded($event)"
+    (planUpdated)="onPlanUpdated($event)"
+    [editMode]="isEditMode"
+    [plan]="planData">
+  </app-plan-create-and-edit>
+
+  <!-- Tabla de planes con paginación -->
+  <div class="card-container">
+    <h3>{{ 'title.plans' | translate }}</h3>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+           matSort matSortActive="planName" matSortDirection="asc">
+
+      <ng-container matColumnDef="planName">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.planName' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.planName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.id' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.description' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.price' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.price | currency }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="duration">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.duration' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.duration }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="maxUsers">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.maxUsers' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.maxUsers }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="isActive">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'plan.isActive' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.isActive ? 'Yes' : 'No' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>{{ 'plan.actions' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+          <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns" [ngClass]="{'editable-row': planData.id === row.id}" mat-row></tr>
+    </table>
+
+    <!-- Paginador -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

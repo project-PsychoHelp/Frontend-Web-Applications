@@ -1,6 +1,6 @@
 export class Plan {
   planName: string;
-  planId: string;
+  id: number;
   description: string;
   price: number;
   duration: string;
@@ -9,7 +9,7 @@ export class Plan {
 
   constructor() {
     this.planName = "";
-    this.planId = "";
+    this.id = 0;
     this.description = "";
     this.price = 0;
     this.duration = "";
