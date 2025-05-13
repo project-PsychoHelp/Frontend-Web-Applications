@@ -1,7 +1,20 @@
 {
-  "footer": {
-    "rights": "Copyright © 2025 {{ api }}, All rights reserved",
-    "intro": "Developed ",
-    "author": "by {{ team }} Team"
-  }
+  "plan": {
+    "editTitle": "Edit Plan",
+    "createTitle": "Create New Plan",
+    "planName": "Plan Name",
+    "id": "Plan ID",
+    "description": "Description",
+    "price": "Price",
+    "duration": "Duration",
+    "maxUsers": "Maximum Users",
+    "isActive": "Is Active?"
+  },
+  "buttons": {
+    "add": "Add",
+    "update": "Update",
+    "cancel": "Cancel"
+  },
+  "Yes": "Yes",
+  "No": "No"
 }

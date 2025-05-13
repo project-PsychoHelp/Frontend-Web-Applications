@@ -1,7 +1,21 @@
 {
-  "footer": {
-    "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
-    "intro": "Desarrollado ",
-    "author": "por el Equipo PyschoMetric"
-  }
+  "plan": {
+    "editTitle": "Editar Plan",
+    "createTitle": "Crear Nuevo Plan",
+    "planName": "Nombre del Plan",
+    "id": "ID del Plan",
+    "description": "Descripción",
+    "price": "Precio",
+    "duration": "Duración",
+    "maxUsers": "Máximo de Usuarios",
+    "isActive": "¿Está Activo?"
+  },
+  "buttons": {
+    "add": "Agregar",
+    "update": "Actualizar",
+    "cancel": "Cancelar"
+  },
+  "Yes": "Sí",
+  "No": "No"
 }
+
