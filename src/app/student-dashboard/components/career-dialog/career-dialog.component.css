@@ -1,0 +1,63 @@
+.dialog-content {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+
+.career-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.career-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #f5f7fa;
+  border-radius: 8px;
+}
+
+.career-icon {
+  font-size: 24px;
+  color: #1976d2;
+}
+
+.career-info {
+  flex: 1;
+}
+
+.career-info h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.career-info p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.compatibility {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1976d2;
+  background: #e3f2fd;
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.dialog-actions {
+  text-align: right;
+  margin-top: 16px;
+}
+
+button {
+  font-size: 14px;
+}
