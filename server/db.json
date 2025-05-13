@@ -1,23 +1,141 @@
-
 {
   "students": [
     {
       "id": 1,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 26,
-      "address": "ESTO ES UN EJEMPLO"
+      "firstName": "John",
+      "lastName": "Smith",
+      "email": "john.smith@example.com"
     },
     {
       "id": 2,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 34,
-      "address": "ESTO ES UN EJEMPLO"
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "email": "emily.johnson@example.com"
     },
     {
       "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
+      "firstName": "Michael",
+      "lastName": "Brown",
+      "email": "michael.brown@example.com"
+    },
+    {
+      "id": 4,
+      "firstName": "Sarah",
+      "lastName": "Davis",
+      "email": "sarah.davis@example.com"
+    },
+    {
+      "id": 5,
+      "firstName": "David",
+      "lastName": "Wilson",
+      "email": "david.wilson@example.com"
+    },
+    {
+      "id": 6,
+      "firstName": "Jessica",
+      "lastName": "Taylor",
+      "email": "jessica.taylor@example.com"
+    },
+    {
+      "id": 7,
+      "firstName": "Daniel",
+      "lastName": "Anderson",
+      "email": "daniel.anderson@example.com"
+    },
+    {
+      "id": 8,
+      "firstName": "Olivia",
+      "lastName": "Thomas",
+      "email": "olivia.thomas@example.com"
+    },
+    {
+      "id": 9,
+      "firstName": "Matthew",
+      "lastName": "Jackson",
+      "email": "matthew.jackson@example.com"
+    },
+    {
+      "id": 10,
+      "firstName": "Ava",
+      "lastName": "White",
+      "email": "ava.white@example.com"
+    },
+    {
+      "id": 11,
+      "firstName": "Andrew",
+      "lastName": "Harris",
+      "email": "andrew.harris@example.com"
+    },
+    {
+      "id": 12,
+      "firstName": "Isabella",
+      "lastName": "Martin",
+      "email": "isabella.martin@example.com"
+    },
+    {
+      "id": 13,
+      "firstName": "Joshua",
+      "lastName": "Thompson",
+      "email": "joshua.thompson@example.com"
+    },
+    {
+      "id": 14,
+      "firstName": "Mia",
+      "lastName": "Garcia",
+      "email": "mia.garcia@example.com"
+    },
+    {
+      "id": 15,
+      "firstName": "Ethan",
+      "lastName": "Martinez",
+      "email": "ethan.martinez@example.com"
+    },
+    {
+      "firstname": "as",
+      "lastname": "fasg",
+      "email": "agg",
+      "id": 16
+    },
+    {
+      "firstname": "asf",
+      "lastname": "gfgg",
+      "email": "hh",
+      "id": 17
+    },
+    {
+      "firstName": "as",
+      "lastName": "fasf",
+      "email": "asgsga",
+      "id": 18
+    },
+    {
+      "firstName": "pedro",
+      "lastName": "piero",
+      "email": "todo_xqteuiero@outlook",
+      "id": 19
+    }
+  ],
+  "sections": [
+    {
+      "id": 3,
+      "time": "13:00",
+      "studentId": 3,
+      "format": "in-person",
+      "status": "confirmed"
+    },
+    {
+      "id": 4,
+      "time": "14:30",
+      "studentId": 1,
+      "format": "video-call",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "time": "16:00",
+      "studentId": 2,
+      "format": "in-person",
+      "status": "confirmed"
     }
   ]
 }
