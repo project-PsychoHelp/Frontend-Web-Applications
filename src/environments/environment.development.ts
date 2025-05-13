@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
   // EJEMPLO SIEMPRE VER TU BASE PATH Y ENDPOINT
-  serverBasePath: 'http://localhost:3000/api/v1',
-  plansEndpointPath: '/plans'
+  serverBasePath: 'https://ca5bc3786cf054e4e249.free.beeceptor.com/api/v1',
+  PlansEndpointPath: '/plans'
   };
