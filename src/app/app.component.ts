@@ -17,10 +17,20 @@ import { FooterContentComponent } from './public/components/footer-content/foote
 import { ProgressComponent } from './student-dashboard/components/progress/progress.component';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 
+import { MatDialogModule } from '@angular/material/dialog';
+
+import {
+  RecommendedCareersComponent
+} from './student-dashboard/components/recommended-careers/recommended-careers.component';
+import {CareerDialogComponent} from './student-dashboard/components/career-dialog/career-dialog.component';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent,
+    HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent,
+    MatDialogModule, RecommendedCareersComponent,
+    CareerDialogComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
