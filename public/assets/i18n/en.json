@@ -1,4 +1,18 @@
 {
+  "APP_NAME": "PsychoHealth",
+  "USER_NAME": "Carlos Mendoza",
+  "PROGRESS": {
+    "TITLE": "Your Progress",
+    "SUBTITLE": "Complete all tests to get accurate recommendations",
+    "GENERAL": "Overall Progress",
+    "COMPLETED_ON": "Completed on",
+    "Test de Intereses": "Interests Test",
+    "Test de Aptitudes": "Aptitudes Test",
+    "Test de Personalidad": "Personality Test",
+    "Completado": "Completed",
+    "Pendiente": "Pending"
+  },
+
   "footer": {
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",
     "intro": "Developed ",
