@@ -2,8 +2,8 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { PsychologistService } from '../../services/psychologists.service';
-import { Psychologist } from '../../model/psychologist.entity';
+import { PsychologistService } from '../../PsychologistSearch/services/psychologists.service';
+import { Psychologist } from '../../PsychologistSearch/model/psychologist.entity';
 
 @Component({
   selector: 'app-psychologist-management',
@@ -14,8 +14,9 @@ export class PsychologistManagementComponent implements OnInit, AfterViewInit {
 
   psychologistData: Psychologist = new Psychologist();
   dataSource!: MatTableDataSource<Psychologist>;
-  displayedColumns: string[] = ['id', 'name', 'age', 'email', 'experiencie', 'speciality', 'actions'];
+  displayedColumns: string[] = ['id', 'name', 'age', 'email', 'experience', 'speciality', 'actions'];
   isEditMode: boolean = false;
+  filteredPsychologists: Psychologist[] = [];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -36,6 +37,7 @@ export class PsychologistManagementComponent implements OnInit, AfterViewInit {
   private getAllPsychologists(): void {
     this.psychologistService.getAll().subscribe((data: Psychologist[]) => {
       this.dataSource = new MatTableDataSource(data);
+      this.filteredPsychologists = data;
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
@@ -83,5 +85,16 @@ export class PsychologistManagementComponent implements OnInit, AfterViewInit {
 
   onSubmitForm() {
     this.isEditMode ? this.updatePsychologist() : this.createPsychologist();
+  }
+
+  onSearch(searchTerm: string): void {
+    this.filteredPsychologists = this.dataSource.data.filter(psychologist =>
+      psychologist.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
+
+  onFilter(filterCriteria: any): void {
+    // Implementa la lógica de filtrado según los criterios
+    console.log('Filtrar:', filterCriteria);
   }
 }

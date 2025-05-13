@@ -2,9 +2,16 @@
   <h1 class="title">Lorem ipsum dolor sit amet</h1>
   <p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
 
-  <app-search-bar (search)="onSearch($event)" (filter)="onFilter($event)"></app-search-bar>
+  <!-- Componente de barra de búsqueda -->
+  <app-search-bar
+    (search)="onSearch($event?.target?.value || '')"
+    (filter)="onFilter($event)">
+  </app-search-bar>
 
   <div class="cards-container">
-    <app-psychologist-card *ngFor="let psychologist of filteredPsychologists" [psychologist]="psychologist"></app-psychologist-card>
+    <app-psychologist-card
+      *ngFor="let psychologist of filteredPsychologists"
+      [psychologist]="psychologist">
+    </app-psychologist-card>
   </div>
 </div>

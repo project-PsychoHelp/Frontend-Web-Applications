@@ -13,6 +13,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 import { HeaderContentComponent } from './public/components/header-content/header-content.component';
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
+import { NgModule } from '@angular/core';
 
 
 @Component({
