@@ -1,23 +1,44 @@
-
 {
-  "students": [
+  "psychologist": [
     {
       "id": 1,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 26,
-      "address": "ESTO ES UN EJEMPLO"
+      "name": "Dra. Mariana López",
+      "age": 42,
+      "email": "mariana.lopez@psicologia.mx",
+      "experiencie": "15 years",
+      "speciality": "Orientación Profesional"
     },
     {
       "id": 2,
-      "name": "ESTO ES UN EJEMPLO",
-      "age": 34,
-      "address": "ESTO ES UN EJEMPLO"
+      "name": "Lic. Carlos Jiménez",
+      "age": 35,
+      "email": "carlos.jimenez@terapiavida.com",
+      "experiencie": "10 years",
+      "speciality": "Coaching Vocacional"
     },
     {
       "id": 3,
-      "name": "William Norton",
-      "age": 38,
-      "address": "One Secret Place"
+      "name": "Mtra. Fernanda Ruiz",
+      "age": 29,
+      "email": "fernanda.ruiz@educapsi.org",
+      "experiencie": "5 years",
+      "speciality": "Orientacion Educativa"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Ricardo Morales",
+      "age": 50,
+      "email": "ricardo.morales@familiaapoyo.com",
+      "experiencie": "22 years",
+      "speciality": "Consejería Individual/Familiar"
+    },
+    {
+      "id": 5,
+      "name": "Psic. Alejandra Torres",
+      "age": 33,
+      "email": "alejandra.torres@psicometria.mx",
+      "experiencie": "8 years",
+      "speciality": "Psicometria"
     }
   ]
 }
