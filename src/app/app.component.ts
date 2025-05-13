@@ -30,6 +30,8 @@ export class AppComponent implements OnInit  {
 
   options =[
     { icon: 'test', path: '/customTests/tests', title: 'Tests'},
+    { icon: 'test', path: '/customTests/testscontent', title: 'Testscontent'},
+
     ]
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {

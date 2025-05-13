@@ -1,0 +1,69 @@
+<!-- Catálogo de testscontent -->
+<div class="table-wrapper">
+  <h3>{{ 'title.content' | translate }}</h3>
+
+  <!-- Add/Edit Form -->
+  <app-testcontent-create-and-edit (editCanceled)="onCancelEdit()"
+                                   (testcontentAdded)="onTestcontentAdded($event)"
+                                   (testcontentUpdated)="onTestcontentUpdated($event)"
+                                   [editMode]="isEditMode"
+                                   [testcontent]="testcontentData"></app-testcontent-create-and-edit>
+
+  <!-- Tabla de testcontents con paginación -->
+  <div class="card-container">
+    <h3>{{ 'title.testcontents' | translate }}</h3>
+
+    <!-- Data Table -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+           matSort matSortActive="id" matSortDirection="asc">
+
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'testcontent.id' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="question">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'testcontent.question' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.question }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="options">
+        <th *matHeaderCellDef mat-header-cell>{{ 'testcontent.options' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <ul>
+            <li *ngFor="let option of element.options">{{ option }}</li>
+          </ul>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="correctAnswer">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'testcontent.correctAnswer' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.correctAnswer }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="explanation">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'testcontent.explanation' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.explanation }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="points">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'testcontent.points' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.points }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>{{ 'testcontent.actions' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+          <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns" [ngClass]="{'editable-row': testcontentData.id === row.id}" mat-row></tr>
+    </table>
+
+    <!-- Paginador -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+</div>

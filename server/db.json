@@ -1,24 +1,6 @@
 {
   "tests": [
     {
-      "id": 1,
-      "title": "Matemáticas Básicas",
-      "description": "Un test para evaluar conocimientos básicos de matemáticas.",
-      "category": "Matemáticas",
-      "recommendationPercentage": 80,
-      "numberOfQuestions": 10,
-      "isFree": true
-    },
-    {
-      "id": 2,
-      "title": "Historia Universal",
-      "description": "Evalúa tus conocimientos sobre eventos históricos importantes.",
-      "category": "Historia",
-      "recommendationPercentage": 70,
-      "numberOfQuestions": 15,
-      "isFree": false
-    },
-    {
       "id": 3,
       "title": "Ciencias Naturales",
       "description": "Test sobre conceptos básicos de ciencias naturales.",
@@ -28,22 +10,64 @@
       "isFree": true
     },
     {
-      "isFree": false,
-      "title": "ewq",
-      "description": "eqwe",
-      "category": "eqwe",
-      "recommendationPercentage": 3,
-      "numberOfQuestions": 3,
+      "title": "qrqe",
+      "description": "rqew",
+      "category": "reqw",
+      "recommendationPercentage": 12,
+      "numberOfQuestions": 12,
+      "isFree": true,
       "id": 4
+    }
+  ],
+  "testscontent": [
+    {
+      "id": 1,
+      "question": "¿Qué actividad disfrutas más en tu tiempo libre?",
+      "options": [
+        "Leer libros",
+        "Hacer deporte",
+        "Crear arte",
+        "Resolver problemas matemáticos"
+      ],
+      "correctAnswer": "Ninguna respuesta es incorrecta",
+      "explanation": "Esta pregunta ayuda a identificar tus intereses personales.",
+      "points": 10
     },
     {
-      "isFree": false,
-      "title": "eqwe",
-      "description": "ewq",
-      "category": "eqweqw",
-      "recommendationPercentage": 4,
-      "numberOfQuestions": 4,
-      "id": 5
+      "id": 2,
+      "question": "¿Qué tipo de tareas prefieres realizar?",
+      "options": [
+        "Trabajar en equipo",
+        "Investigar y analizar",
+        "Diseñar y construir",
+        "Ayudar a otras personas"
+      ],
+      "correctAnswer": "Ninguna respuesta es incorrecta",
+      "explanation": "Esta pregunta evalúa tus preferencias laborales.",
+      "points": 15
+    },
+    {
+      "options": [
+        "eeee",
+        "qeqee"
+      ],
+      "question": "qeqw",
+      "correctAnswer": "eqwe",
+      "explanation": "ewqewq",
+      "points": 10,
+      "id": 3
+    },
+    {
+      "options": [
+        "eqweqwewqe",
+        "eqwewq",
+        "qqqqq"
+      ],
+      "correctAnswer": "eqweqwe",
+      "question": "eqwe",
+      "explanation": "ewq",
+      "points": 15,
+      "id": 4
     }
   ]
 }

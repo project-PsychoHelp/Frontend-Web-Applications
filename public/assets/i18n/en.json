@@ -13,10 +13,23 @@
     "numberOfQuestions": "Number of Questions",
     "isFree": "Is Free"
   },
+
+  "testcontent": {
+    "id": "ID",
+    "question": "Question",
+    "options": "Add Options",
+    "correctAnswer": "Correct Answer",
+    "explanation": "Explanation",
+    "points": "Points",
+    "addOption": "More options"
+  },
+
   "title": {
     "tests": "TEST CATALOG",
     "add": "New Student",
-    "edit": "ADD NEW TEST TYPES"
+    "edit": "ADD NEW TEST TYPES",
+    "testcontents": "ADD NEW CONTEST TEST",
+    "content": "TEST QUESTION SECTION"
   }
 }
 

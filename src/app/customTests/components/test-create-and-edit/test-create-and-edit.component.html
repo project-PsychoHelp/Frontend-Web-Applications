@@ -1,0 +1,40 @@
+<!-- Create and Edit Form -->
+<h4>{{ 'title.edit' | translate }}</h4>
+<div class="form-section">
+
+  <form (submit)="onSubmit()" #testForm="ngForm" class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="{{ 'test.title' | translate }}" name="title" required [(ngModel)]="test.title">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'test.description' | translate }}" name="description" required [(ngModel)]="test.description">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'test.category' | translate }}" name="category" required [(ngModel)]="test.category">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'test.recommendationPercentage' | translate }}" name="recommendationPercentage" required [(ngModel)]="test.recommendationPercentage">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'test.numberOfQuestions' | translate }}" name="numberOfQuestions" required [(ngModel)]="test.numberOfQuestions">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>{{ 'test.isFree' | translate }}</mat-label>
+      <mat-select name="isFree" [(ngModel)]="test.isFree">
+        <mat-option [value]="true">{{ 'Yes' | translate }}</mat-option>
+        <mat-option [value]="false">{{ 'No' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <ng-container>
+      @if (editMode === true) {
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      }
+      @else {
+      <button mat-raised-button color="primary">Add</button>
+      }
+    </ng-container>
+  </form>
+
+</div>

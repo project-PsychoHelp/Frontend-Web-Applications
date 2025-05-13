@@ -1,0 +1,91 @@
+<!-- Tarjetas de tests -->
+<div class="card-container">
+  <h3>{{ 'title.tests' | translate }}</h3>
+
+  <mat-card class="test-card" *ngFor="let test of dataSource.data">
+    <mat-card-header>
+      <mat-card-title>{{ test.title }}</mat-card-title>
+      <mat-card-subtitle>{{ 'test.category' | translate }}: {{ test.category }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ 'test.description' | translate }}: {{ test.description }}</p>
+      <p>{{ 'test.recommendationPercentage' | translate }}: {{ test.recommendationPercentage }}%</p>
+      <p>{{ 'test.numberOfQuestions' | translate }}: {{ test.numberOfQuestions }}</p>
+      <p>{{ 'test.isFree' | translate }}: {{ test.isFree ? ('Yes' | translate) : ('No' | translate) }}</p>
+    </mat-card-content>
+
+  </mat-card>
+</div>
+
+
+
+<!-- Catálogo de tests -->
+<div class="table-wrapper">
+  <h3>{{ 'title.tests' | translate }}</h3>
+
+  <!-- Add/Edit Form -->
+  <app-test-create-and-edit (editCanceled)="onCancelEdit()"
+                            (testAdded)="onTestAdded($event)"
+                            (testUpdated)="onTestUpdated($event)"
+                            [editMode]="isEditMode"
+                            [test]="testData"></app-test-create-and-edit>
+
+  <!-- Tabla de tests con paginación -->
+  <div class="card-container">
+    <h3>{{ 'title.tests' | translate }}</h3>
+
+    <!-- Data Table -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
+           matSort matSortActive="title" matSortDirection="asc">
+
+      <ng-container matColumnDef="title">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.title' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.title }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="id">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.id' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.description' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="category">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.category' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.category }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="recommendationPercentage">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.recommendationPercentage' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.recommendationPercentage }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="numberOfQuestions">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.numberOfQuestions' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.numberOfQuestions }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="isFree">
+        <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'test.isFree' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>{{ element.isFree ? 'Yes' : 'No' }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th *matHeaderCellDef mat-header-cell>{{ 'test.actions' | translate }}</th>
+        <td *matCellDef="let element" mat-cell>
+          <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
+          <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
+        </td>
+      </ng-container>
+
+      <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns" [ngClass]="{'editable-row': testData.id === row.id}" mat-row></tr>
+    </table>
+
+    <!-- Paginador -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+  </div>
+</div>
