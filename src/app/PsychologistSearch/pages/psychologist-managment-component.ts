@@ -2,19 +2,30 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { PsychologistService } from '../../PsychologistSearch/services/psychologists.service';
-import { Psychologist } from '../../PsychologistSearch/model/psychologist.entity';
+
+//correccion
+import { PsychologistService } from '../services/psychologists.service'
+
+
+import {Psychologist} from '../model/psychologist.entity';
+import {NgForOf} from '@angular/common';
+import {SearchBarComponent} from '../components/search-bar/search-bar.component'
 
 @Component({
   selector: 'app-psychologist-management',
   templateUrl: './psychologist-managment-component.html',
-  styleUrls: ['./psychologist-managment-component.css']
+  imports: [
+    //NgForOf,
+    SearchBarComponent
+  ],
+  styleUrls: ['./psychologist-managment-component.css'],
+  standalone: true
 })
 export class PsychologistManagementComponent implements OnInit, AfterViewInit {
 
   psychologistData: Psychologist = new Psychologist();
   dataSource!: MatTableDataSource<Psychologist>;
-  displayedColumns: string[] = ['id', 'name', 'age', 'email', 'experience', 'speciality', 'actions'];
+ // displayedColumns: string[] = ['id', 'name', 'age', 'email', 'experience', 'speciality', 'actions'];
   isEditMode: boolean = false;
   filteredPsychologists: Psychologist[] = [];
 

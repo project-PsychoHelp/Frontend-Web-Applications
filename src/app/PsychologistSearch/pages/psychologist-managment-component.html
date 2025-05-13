@@ -4,14 +4,11 @@
 
   <!-- Componente de barra de búsqueda -->
   <app-search-bar
-    (search)="onSearch($event?.target?.value || '')"
-    (filter)="onFilter($event)">
-  </app-search-bar>
+    (search)="onSearch($event)"
+    (filter)="onFilter($event)"/>
+
 
   <div class="cards-container">
-    <app-psychologist-card
-      *ngFor="let psychologist of filteredPsychologists"
-      [psychologist]="psychologist">
-    </app-psychologist-card>
+
   </div>
 </div>
