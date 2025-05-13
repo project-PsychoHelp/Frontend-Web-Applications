@@ -14,11 +14,13 @@ import { LanguageSwitcherComponent } from "./public/components/language-switcher
 import { HeaderContentComponent } from './public/components/header-content/header-content.component';
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
 
+import { ProgressComponent } from './student-dashboard/components/progress/progress.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-                         MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent,HeaderContentComponent,FooterContentComponent],
+  imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
