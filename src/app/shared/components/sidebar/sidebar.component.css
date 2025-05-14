@@ -1,0 +1,33 @@
+mat-nav-list {
+  padding-top: 16px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+
+  &:hover {
+    background: #e3f2fd; /* Light blue hover effect */
+  }
+
+  &.active {
+    background: #1976d2; /* Primary color from AzureBlue theme */
+    color: white;
+
+    mat-icon {
+      color: white;
+    }
+  }
+}
+
+mat-icon {
+  margin-right: 16px;
+  color: #1976d2; /* Primary color */
+}
+
+span {
+  font-size: 16px;
+}
