@@ -25,6 +25,14 @@
   "92% de coincidencia": "92% de coincidencia",
   "87% de coincidencia": "87% de coincidencia",
   "83% de coincidencia": "83% de coincidencia",
+
+  "SIDEBAR": {
+    "DASHBOARD": "Panel",
+    "TESTS": "Tests",
+    "CAREERS": "Carreras",
+    "PROFILE": "Perfil"
+  },
+
   "footer": {
     "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
     "intro": "Desarrollado ",
