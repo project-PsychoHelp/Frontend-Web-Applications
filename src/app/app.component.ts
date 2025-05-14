@@ -19,10 +19,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 import { MatDialogModule } from '@angular/material/dialog';
 
-import {
-  RecommendedCareersComponent
-} from './student-dashboard/components/recommended-careers/recommended-careers.component';
-import {CareerDialogComponent} from './student-dashboard/components/career-dialog/career-dialog.component';
+import {  RecommendedCareersComponent } from './student-dashboard/components/recommended-careers/recommended-careers.component';
+import { CareerDialogComponent } from './student-dashboard/components/career-dialog/career-dialog.component';
+import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
+import {ToolbarComponent} from './shared/components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-root',
@@ -30,12 +30,13 @@ import {CareerDialogComponent} from './student-dashboard/components/career-dialo
     MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent,
     HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent,
     MatDialogModule, RecommendedCareersComponent,
-    CareerDialogComponent,],
+    CareerDialogComponent, SidebarComponent, ToolbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit  {
-  title = 'PyschoHelp';
+  title = 'PsychoHelp';
+  isSidenavOpen = true;
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
@@ -59,6 +60,8 @@ export class AppComponent implements OnInit  {
         }
       });
   }
-
+  toggleSidenav(): void {
+    this.isSidenavOpen = !this.isSidenavOpen;
+  }
 
 }
