@@ -1,4 +1,4 @@
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
 .blue-text {
@@ -10,4 +10,8 @@
           color: black;
           font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
           font-weight: bold;
-        }
+}
+.dot-icon{
+  color: red;
+
+}
