@@ -1,0 +1,20 @@
+<mat-toolbar color="primary">
+  <!-- Toggle Button for Sidebar -->
+  <button mat-icon-button (click)="onToggleSidenav()" class="toggle-button">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <!-- Left Side: App Name -->
+  <span class="app-name">
+    {{ 'APP_NAME' | translate }}
+    <span class="pink-dot">•</span>
+  </span>
+
+  <!-- Right Side: Notification Icon and User Info -->
+  <div class="spacer"></div>
+  <mat-icon class="notification-icon">notifications</mat-icon>
+  <div class="user-info">
+    <img class="user-avatar" src="https://placehold.co/60x60" alt="User Avatar" />
+    <span class="user-name">{{ 'USER_NAME' | translate }}</span>
+  </div>
+</mat-toolbar>
