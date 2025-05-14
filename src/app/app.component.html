@@ -1,5 +1,22 @@
-<app-header-content></app-header-content>
-<app-progress></app-progress>
-<app-recommended-careers></app-recommended-careers>
-<router-outlet></router-outlet>
+<!--<app-header-content></app-header-content> -->
+<mat-sidenav-container>
+  <!-- Sidebar -->
+  <mat-sidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+    [fixedInViewport]="true"
+    fixedTopGap="64"
+  >
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+      <app-recommended-careers></app-recommended-careers>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <app-footer-content></app-footer-content>
