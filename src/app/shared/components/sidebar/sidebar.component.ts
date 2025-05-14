@@ -4,6 +4,7 @@ import {RouterLink, RouterLinkActive} from '@angular/router';
 import {MatLine} from '@angular/material/core';
 import {MatIcon} from '@angular/material/icon';
 import {TranslatePipe} from '@ngx-translate/core';
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +17,7 @@ import {TranslatePipe} from '@ngx-translate/core';
     MatListItemIcon,
     RouterLink,
     TranslatePipe,
+    NgForOf,
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
