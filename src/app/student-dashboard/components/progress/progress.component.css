@@ -1,9 +1,10 @@
 .progress-section {
-  background: #f5f7fa;
+  background: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .progress-section h2 {
@@ -46,7 +47,7 @@
 }
 
 .test-card {
-  background: #fff;
+  background: #f5f7fa;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
@@ -56,6 +57,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .test-card .test-icon {
