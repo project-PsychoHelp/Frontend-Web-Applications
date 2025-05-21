@@ -99,3 +99,10 @@
 .test-card .test-status:not(.completed) {
   color: #ff9800;
 }
+
+.main-title{
+
+  margin-left: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
