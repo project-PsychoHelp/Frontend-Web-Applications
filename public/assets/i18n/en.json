@@ -41,6 +41,12 @@
     "PROFILE": "Profile",
     "SETTINGS": "Settings"
   },
+
+  "PAGE_NOT_FOUND": {
+    "TITLE": "Page Not Found",
+    "MESSAGE": "The page you are looking for does not exist.",
+    "BACK_TO_DASHBOARD": " Go Back to Dashboard"
+  },
   "footer": {
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",
     "intro": "Developed ",
