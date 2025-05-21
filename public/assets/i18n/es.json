@@ -1,6 +1,6 @@
 {
   "APP_NAME": "PsychoHealth",
-  "USER_NAME": "Carlos Mendoza",
+
   "PROGRESS": {
     "TITLE": "Tu progreso",
     "SUBTITLE": "Completa todos los tests para obtener recomendaciones precisas",
@@ -35,7 +35,10 @@
     "DASHBOARD": "Panel",
     "TESTS": "Tests",
     "CAREERS": "Carreras",
-    "PROFILE": "Perfil"
+    "SESSIONS": "Sesiones",
+    "RESOURCES": "Recursos",
+    "PROFILE": "Mi perfil",
+    "SETTINGS": "Configuración"
   },
 
   "footer": {
