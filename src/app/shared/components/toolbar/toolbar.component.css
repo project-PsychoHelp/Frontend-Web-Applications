@@ -1,6 +1,11 @@
 mat-toolbar {
   display: flex;
   align-items: center;
+ //position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  //z-index: 1000;
 }
 
 .toggle-button {
@@ -15,7 +20,7 @@ mat-toolbar {
 }
 
 .pink-dot {
-  color: #ff4081; /* Pink color to match the dot in the image */
+  color: #ff4081;
   margin-left: 4px;
   font-size: 24px;
 }
@@ -26,6 +31,7 @@ mat-toolbar {
 
 .notification-icon {
   margin-right: 16px;
+  margin-left: 16px;
   cursor: pointer;
 }
 
