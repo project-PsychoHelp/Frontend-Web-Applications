@@ -1,5 +1,7 @@
 mat-nav-list {
   padding-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -8,24 +10,24 @@ a {
   padding: 8px 16px;
   color: #333;
   text-decoration: none;
+}
 
-  &:hover {
-    background: #e3f2fd; /* Light blue hover effect */
-  }
+a:hover {
+  background: #e3f2fd;
+}
 
-  &.active {
-    background: #1976d2; /* Primary color from AzureBlue theme */
-    color: white;
+a.active {
+  background: #1976d2;
+  color: white;
+}
 
-    mat-icon {
-      color: white;
-    }
-  }
+a.active mat-icon {
+  color: white;
 }
 
 mat-icon {
   margin-right: 16px;
-  color: #1976d2; /* Primary color */
+  color: #1976d2;
 }
 
 span {
