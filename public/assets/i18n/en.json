@@ -6,11 +6,16 @@
     "SUBTITLE": "Complete all tests to get accurate recommendations",
     "GENERAL": "Overall Progress",
     "COMPLETED_ON": "Completed on",
-    "Test de Intereses": "Interests Test",
-    "Test de Aptitudes": "Aptitudes Test",
-    "Test de Personalidad": "Personality Test",
-    "Completado": "Completed",
-    "Pendiente": "Pending"
+    "ESTIMATED_TIME": "minutes approximately",
+    "NAME": {
+      "INTEREST": "Interests Test",
+      "APTITUDES": "Aptitudes Test",
+      "PERSONALITY": "Personality Test"
+    },
+    "STATUS": {
+      "COMPLETED": "Completed",
+      "PENDING": "Pending"
+    }
   },
   "CAREERS": {
     "TITLE": "Recommended Careers",
