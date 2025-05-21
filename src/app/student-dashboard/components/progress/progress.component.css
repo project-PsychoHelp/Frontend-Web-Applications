@@ -6,12 +6,12 @@
   margin: 20px;
 }
 
-h2 {
+.progress-section h2 {
   font-size: 24px;
   margin: 0 0 8px;
 }
 
-.subtitle {
+.progress-section .subtitle {
   font-size: 14px;
   color: #666;
   margin: 0 0 16px;
@@ -20,75 +20,80 @@ h2 {
 .overall-progress {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
-.progress-label {
+.overall-progress .progress-label {
   font-size: 16px;
   font-weight: 500;
-  margin-right: 16px;
 }
 
-mat-progress-bar {
+.overall-progress mat-progress-bar {
   flex: 1;
-  height: 8px;
-  border-radius: 4px;
 }
 
-.progress-percentage {
-  font-size: 16px;
+.overall-progress .progress-percentage {
+  font-size: 14px;
   font-weight: 500;
-  margin-left: 16px;
 }
 
 .test-cards {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  justify-content: space-between;
 }
 
 .test-card {
-  flex: 1;
   background: #fff;
   padding: 16px;
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 250px;
+  max-width: 600px;
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.test-icon {
+.test-card .test-icon {
   font-size: 24px;
-  &.completed {
-    color: #4caf50; /* Green for completed */
-  }
-  &:not(.completed) {
-    color: #ff9800; /* Orange for pending */
-  }
 }
 
-.test-info {
+.test-card .test-icon.completed {
+  color: #4caf50;
+}
+
+.test-card .test-icon:not(.completed) {
+  color: #ff9800;
+}
+
+.test-card .test-info {
   flex: 1;
 }
 
-.test-info h3 {
+.test-card .test-info h3 {
   font-size: 16px;
   margin: 0 0 4px;
 }
 
-.test-info p {
+.test-card .test-info p {
   font-size: 14px;
   color: #666;
   margin: 0;
 }
 
-.test-status {
+.test-card .test-status {
   font-size: 14px;
   font-weight: 500;
-  &.completed {
-    color: #4caf50;
-  }
-  &:not(.completed) {
-    color: #ff9800;
-  }
+}
+
+.test-card .test-status.completed {
+  color: #4caf50;
+}
+
+.test-card .test-status:not(.completed) {
+  color: #ff9800;
 }

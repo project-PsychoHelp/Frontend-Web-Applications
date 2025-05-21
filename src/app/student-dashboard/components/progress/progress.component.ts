@@ -6,6 +6,7 @@ import {Student} from '../../model/student.entity';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {MatProgressBar} from '@angular/material/progress-bar';
 import {MatIcon} from '@angular/material/icon';
+import {RecommendedCareersComponent} from '../recommended-careers/recommended-careers.component';
 
 @Component({
   selector: 'app-progress',
@@ -15,7 +16,8 @@ import {MatIcon} from '@angular/material/icon';
     MatIcon,
     TranslateModule,
     NgIf,
-    NgForOf
+    NgForOf,
+    RecommendedCareersComponent
   ],
   templateUrl: './progress.component.html',
   styleUrl: './progress.component.css'
