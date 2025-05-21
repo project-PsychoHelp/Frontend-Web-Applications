@@ -16,13 +16,17 @@
         {{ test.status === 'Completado' ? 'check_circle' : 'pending' }}
       </mat-icon>
       <div class="test-info">
-        <h3>{{ test.name | translate }}</h3>
+        <h3 *ngIf="test.name === 'Test de Intereses'">{{ 'PROGRESS.NAME.INTEREST' | translate }}</h3>
+        <h3 *ngIf="test.name === 'Test de Aptitudes'">{{ 'PROGRESS.NAME.APTITUDES' | translate }}</h3>
+        <h3 *ngIf="test.name === 'Test de Personalidad'">{{ 'PROGRESS.NAME.PERSONALITY' | translate }}</h3>
         <p *ngIf="test.status === 'Completado'">{{ 'PROGRESS.COMPLETED_ON' | translate }} {{ test.completionDate }}</p>
-        <p *ngIf="test.status === 'Pendiente'">{{ test.estimatedTime }}</p>
+        <p *ngIf="test.status === 'Pendiente'">{{ test.estimatedTime }} {{'PROGRESS.ESTIMATED_TIME' | translate }}</p>
       </div>
-      <span class="test-status" [ngClass]="{'completed': test.status === 'Completado'}">
-        {{ test.status | translate }}
+      <span class="test-status" [ngClass]="{'completed': test.status === 'Completado'}"
+      >
+        {{ test.status }}
       </span>
     </div>
   </div>
 </div>
+<app-recommended-careers/>
