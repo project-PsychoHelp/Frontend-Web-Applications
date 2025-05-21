@@ -9,7 +9,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { BreakpointObserver } from "@angular/cdk/layout";
-import { TranslateService } from "@ngx-translate/core";
+import {TranslatePipe, TranslateService} from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 import { HeaderContentComponent } from './public/components/header-content/header-content.component';
 import { FooterContentComponent } from './public/components/footer-content/footer-content.component';
@@ -26,42 +26,48 @@ import {ToolbarComponent} from './shared/components/toolbar/toolbar.component';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent,
+    MatSidenavModule,
+    MatDividerModule, MatListModule, LanguageSwitcherComponent,
     HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent,
     MatDialogModule, RecommendedCareersComponent,
-    CareerDialogComponent, SidebarComponent, ToolbarComponent],
+    CareerDialogComponent, SidebarComponent, ToolbarComponent, TranslatePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit  {
   title = 'PsychoHelp';
-  isSidenavOpen = true;
 
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
-  options = [
-
-  ];
+  isSidenavOpen = true;
+  sidenavMode: 'side' | 'over' = 'side';
+  options = [];
 
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
+
   ngOnInit(): void {
     this.observer.observe(['(max-width: 1280px)']) // Observa el ancho de la pantalla
       .subscribe((response) => {  // Se suscribe a los cambios en el ancho de la pantalla
         if (response.matches) { // Si el ancho de la pantalla es menor a 1280px
-          this.sidenav.mode = 'over'; // Se despliega sobre el contenido
-          this.sidenav.close(); // Se cierra
+          this.sidenavMode = 'over'; // Se despliega sobre el contenido
+          this.isSidenavOpen = false; // Se cierra
         } else {
-          this.sidenav.mode = 'side'; // Se despliega al lado del contenido
-          this.sidenav.open();  // Se abre
+          this.sidenavMode = 'side'; // Se despliega al lado del contenido
+          this.isSidenavOpen = true;  // Se abre
         }
       });
   }
+
+
+
   toggleSidenav(): void {
+    this.sidenav.toggle();
     this.isSidenavOpen = !this.isSidenavOpen;
   }
-
 }
+
