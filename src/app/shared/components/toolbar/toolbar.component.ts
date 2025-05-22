@@ -5,6 +5,7 @@ import {TranslatePipe} from '@ngx-translate/core';
 import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {LanguageSwitcherComponent} from '../../../public/components/language-switcher/language-switcher.component';
+import {NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-toolbar',
@@ -13,7 +14,8 @@ import {LanguageSwitcherComponent} from '../../../public/components/language-swi
     MatIcon,
     TranslatePipe,
     MatIconButton,
-    LanguageSwitcherComponent
+    LanguageSwitcherComponent,
+    NgIf
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
@@ -21,6 +23,7 @@ import {LanguageSwitcherComponent} from '../../../public/components/language-swi
 export class ToolbarComponent implements OnInit {
   @Output() toggleSidenav = new EventEmitter<void>();
   studentName: string | null = null;
+  studentType: string | null = null;
 
   constructor(private http: HttpClient) {}
 
@@ -34,10 +37,12 @@ export class ToolbarComponent implements OnInit {
         next: data => {
           const studentData = data.students.find(s => s.id === 1);
           this.studentName = studentData ? studentData.fullName : 'Unknown User';
+          this.studentType = studentData ? studentData.userType : 'Unknow Type';
         },
         error: err => {
           console.error('Error fetching the data: ',err);
           this.studentName = 'Unknown User';
+          this.studentType = 'Unknown Type';
         }
       })
   }
