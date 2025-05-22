@@ -3,7 +3,7 @@
     {
       "id": 1,
       "fullName": "Carlos Mendoza",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 75,
         "tests": [
@@ -45,7 +45,7 @@
     {
       "id": 2,
       "fullName": "Ana García López",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 33,
         "tests": [
@@ -82,7 +82,7 @@
     {
       "id": 3,
       "fullName": "Sofía Ramírez Pérez",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 100,
         "tests": [
@@ -124,7 +124,7 @@
     {
       "id": 4,
       "fullName": "Juan Pérez Gómez",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 66,
         "tests": [
@@ -161,7 +161,7 @@
     {
       "id": 5,
       "fullName": "María Torres Vargas",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 0,
         "tests": [
@@ -187,7 +187,7 @@
     {
       "id": 6,
       "fullName": "Luis Fernández Díaz",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 66,
         "tests": [
@@ -224,7 +224,7 @@
     {
       "id": 7,
       "fullName": "Elena Castro Ruiz",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 100,
         "tests": [
@@ -261,7 +261,7 @@
     {
       "id": 8,
       "fullName": "Pedro Gómez Sánchez",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 33,
         "tests": [
@@ -293,7 +293,7 @@
     {
       "id": 9,
       "fullName": "Laura Morales Vega",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 66,
         "tests": [
@@ -330,7 +330,7 @@
     {
       "id": 10,
       "fullName": "Diego Herrera Ortiz",
-      "userType": "estudiante",
+      "userType": " Estudiante",
       "progress": {
         "overallPercentage": 100,
         "tests": [

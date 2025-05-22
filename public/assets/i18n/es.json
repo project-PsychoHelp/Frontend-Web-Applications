@@ -1,6 +1,9 @@
 {
   "APP_NAME": "PsychoHealth",
-
+  "USER": {
+    "STUDENT": "Estudiante",
+    "PSYCHOLOGIST": "Psicólogo"
+  },
   "PROGRESS": {
     "TITLE": "Tu progreso",
     "SUBTITLE": "Completa todos los tests para obtener recomendaciones precisas",
