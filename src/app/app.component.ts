@@ -25,9 +25,9 @@ export class AppComponent implements OnInit {
   title = 'PSYCOHELP';
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   options = [
-    { icon: 'home', path: '/home', title: 'Dashboard'},
+    { icon: 'home', path: '/psicologist/sections', title: 'Dashboard'},
     { icon: 'person', path: '/psicologist/students', title: 'Estudiantes'},
-    { icon: 'calendar_today', path:'/psicologist/sections', title: 'calendar'},
+    { icon: 'calendar_today', path:'/psicologist/about', title: 'calendar'},
     { icon: ' message', path:'/about', title: 'mensajes'},
     { icon: 'maximize', path:'/about', title: 'herramientas'},
     { icon: 'signal_cellular_alt ', path:'/about', title: 'informes'},

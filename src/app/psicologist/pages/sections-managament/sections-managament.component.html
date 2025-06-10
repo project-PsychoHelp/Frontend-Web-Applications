@@ -1,48 +1,41 @@
-<!-- Student catalogue -->
-<div class="table-wrapper">
-  <h3>{{ 'Estudiantes' | translate }}</h3>
+<mat-card class="agenda-container">
+  <mat-card-title>Agenda de hoy</mat-card-title>
+  <mat-card-subtitle>{{ currentDate | date: 'fullDate' }}</mat-card-subtitle>
+  <mat-card-content>
 
+      <div *ngFor="let sections of filteredSections" class="agenda-item" [ngClass]="{'pending': sections.status === 'Pendiente'}">
+        <div class="agenda-left">
+          <div class="profile-placeholder"></div>
+          <div class="session-info">
+            <h4>{{ sections.studentId }}</h4>
+            <p>{{ sections.type }}</p>
+            <p>
+              🕒 {{ sections.time }} - {{ sections.endTime }}
+              &nbsp;•&nbsp;
+              {{ sections.mode }}
+            </p>
+          </div>
+        </div>
+        <div class="agenda-actions">
+          <button mat-raised-button color="primary" *ngIf="sections.status === 'Confirmada'">Unirse ahora</button>
+          <button mat-stroked-button color="accent" (click)="onEditItem(sections)">Reprogramar</button>
+          <button mat-stroked-button color="warn" *ngIf="sections.status === 'Pendiente'" (click)="onDeleteItem(sections)">Cancelar</button>
+        </div>
+        <span class="status-tag" [ngClass]="sections.status === 'Confirmada' ? 'status-confirmed' : 'status-pending'">
+          {{ sections.status }}
+        </span>
+        <div *ngIf="editingSectionId === sections.id" class="edit-form-container">
+          <app-sections-create-and-edit
+            [sections]="sectionData"
+            [editMode]="isEditMode"
+            (sectionUpdated)="onStudentUpdated($event)"
+            (editCanceled)="onCancelEdit()">
+          </app-sections-create-and-edit>
+        </div>
+      </div>
 
-  <app-sections-create-and-edit (editCanceled)="onCancelEdit()"
-                               (studentAdded)="onStudentAdded($event)"
-                               (studentUpdated)="onStudentUpdated($event)"
-                               [editMode] = "isEditMode"
-                               [student]="studentData"/>
-  <!-- Data Table -->
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8"
-         matSort matSortActive="name" matSortDirection="asc">
-
-    <ng-container matColumnDef="id">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header> {{ 'students.id' }} </th>
-      <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="name">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'students.firstName'  }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.firstname }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="age">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'students.lastName' }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.lastname }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="address">
-      <th *matHeaderCellDef mat-header-cell mat-sort-header>{{ 'students.email' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>{{ element.email }}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th *matHeaderCellDef mat-header-cell> {{ 'students.actions' | translate }}</th>
-      <td *matCellDef="let element" mat-cell>
-        <a (click)="onEditItem(element)" href="javascript:void(0)"><mat-icon>edit</mat-icon></a>
-        <a (click)="onDeleteItem(element)" href="javascript:void(0)"><mat-icon>delete</mat-icon></a>
-      </td>
-    </ng-container>
-
-    <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-    <tr *matRowDef="let row; columns:displayedColumns" [ngClass]="{'editable-row': studentData.id === row.id }" mat-row></tr>
-  </table>
-  <!-- Paginator child component-->
-  <mat-paginator [pageSizeOptions]="[5, 10, 15]" [pageSize]="5" showFirstLastButtons></mat-paginator>
-</div>
+    <ng-template #noSessions>
+      <p>No hay sesiones programadas para hoy.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

@@ -9,6 +9,6 @@ export class SectionsService  extends BaseService<Sections> {
 
   constructor(http: HttpClient) {
     super(http);
-    this.resourceEndpoint = '/students';
+    this.resourceEndpoint = '/sections';
   }
 }

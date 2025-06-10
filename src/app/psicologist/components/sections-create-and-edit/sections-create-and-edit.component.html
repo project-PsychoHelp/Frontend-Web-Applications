@@ -1,26 +1,121 @@
-<!-- Create and Edit Form -->
-<h4>{{ editMode ? 'Edit Student' : 'New Student' }}</h4>
-<div class="form-section">
 
-  <form (submit)="onSubmit()" #studentForm='ngForm' class="form-row">
-    <mat-form-field>
-      <input matInput placeholder="Name" name="firstname" required [(ngModel)]="student.firstName">
-    </mat-form-field>
-    <mat-form-field id="age-form-field">
-      <input matInput  placeholder="lastname" name="lastname" required [(ngModel)]="student.lastName">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="email" name="email" required [(ngModel)]="student.email">
-    </mat-form-field>
-    <ng-container>
-      @if (editMode === true) {
-        <button mat-raised-button color="primary">Update</button>
-        <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
-      }
-      @else {
-        <button mat-raised-button color="primary">Add</button>
-      }
-    </ng-container>
+<div class="session-form-container">
+  <div class="form-header">
+    <h2>{{ editMode ? 'Editar Sesión' : 'Nueva Sesión' }}</h2>
+  </div>
+
+  <form #sessionForm="ngForm" (ngSubmit)="onSubmit()" class="session-form">
+
+    <!-- Tipo de Sesión -->
+    <div class="form-group">
+      <label for="sessionType">Tipo de Sesión *</label>
+      <select [(ngModel)]="sections.type"
+              name="type"
+              id="sessionType"
+              required
+              class="form-control">
+        <option value="">Seleccionar tipo</option>
+        <option value="individual">Individual</option>
+        <option value="grupal">Grupal</option>
+        <option value="seguimiento">Seguimiento</option>
+        <option value="evaluacion">Evaluación</option>
+      </select>
+    </div>
+
+    <!-- ID del Estudiante -->
+    <div class="form-group">
+      <label for="studentId">ID del Estudiante *</label>
+      <input type="number"
+             [(ngModel)]="sections.studentId"
+             name="studentId"
+             id="studentId"
+             class="form-control"
+             placeholder="Ingrese el ID del estudiante"
+             required>
+    </div>
+
+    <!-- Fecha y Horarios -->
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="date">Fecha *</label>
+        <input type="date"
+               [(ngModel)]="sections.date"
+               name="date"
+               id="date"
+               class="form-control"
+               required>
+      </div>
+
+
+
+      <div class="form-group col-4">
+        <label for="endTime">Hora de Fin *</label>
+        <input type="time"
+               [(ngModel)]="sections.endTime"
+               name="endTime"
+               id="endTime"
+               class="form-control"
+               required>
+      </div>
+    </div>
+
+    <!-- Estado y Modalidad -->
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="status">Estado *</label>
+        <select [(ngModel)]="sections.status"
+                name="status"
+                id="status"
+                required
+                class="form-control">
+          <option value="">Seleccionar estado</option>
+          <option value="programada">Programada</option>
+          <option value="confirmada">Confirmada</option>
+          <option value="completada">Completada</option>
+          <option value="cancelada">Cancelada</option>
+          <option value="pendiente">Pendiente</option>
+        </select>
+      </div>
+
+      <div class="form-group col-6">
+        <label for="mode">Modalidad *</label>
+        <select [(ngModel)]="sections.mode"
+                name="mode"
+                id="mode"
+                required
+                class="form-control">
+          <option value="">Seleccionar modalidad</option>
+          <option value="presencial">Presencial</option>
+          <option value="virtual">Virtual</option>
+          <option value="hibrida">Híbrida</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Notas -->
+    <div class="form-group">
+      <label for="notes">Notas</label>
+      <textarea [(ngModel)]="sections.notes"
+                name="notes"
+                id="notes"
+                class="form-control"
+                rows="4"
+                placeholder="Notas adicionales sobre la sesión"></textarea>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="form-actions">
+      <button type="button"
+              (click)="onCancel()"
+              class="btn btn-secondary">
+        Cancelar
+      </button>
+      <button type="submit"
+              [disabled]="!sessionForm.form.valid"
+              class="btn btn-primary">
+        {{ editMode ? 'Actualizar' : 'Crear' }} Sesión
+      </button>
+    </div>
+
   </form>
-
 </div>

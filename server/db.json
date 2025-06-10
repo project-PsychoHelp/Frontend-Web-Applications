@@ -2,140 +2,393 @@
   "students": [
     {
       "id": 1,
-      "firstName": "John",
-      "lastName": "Smith",
-      "email": "john.smith@example.com"
+      "firstname": "Carlos",
+      "lastname": "Mendoza",
+      "email": "carlos.mendoza@email.com",
+      "phone": "+51 987654321",
+      "age": 28,
+      "status": "active",
+      "registrationDate": "2023-03-15"
     },
     {
       "id": 2,
-      "firstName": "Emily",
-      "lastName": "Johnson",
-      "email": "emily.johnson@example.com"
+      "firstname": "Laura",
+      "lastname": "Sánchez",
+      "email": "laura.sanchez@email.com",
+      "phone": "+51 987654322",
+      "age": 32,
+      "status": "active",
+      "registrationDate": "2023-02-20"
     },
     {
       "id": 3,
-      "firstName": "Michael",
-      "lastName": "Brown",
-      "email": "michael.brown@example.com"
+      "firstname": "Miguel",
+      "lastname": "Rodríguez",
+      "email": "miguel.rodriguez@email.com",
+      "phone": "+51 987654323",
+      "age": 25,
+      "status": "active",
+      "registrationDate": "2023-04-10"
     },
     {
       "id": 4,
-      "firstName": "Sarah",
-      "lastName": "Davis",
-      "email": "sarah.davis@example.com"
+      "firstname": "Ana",
+      "lastname": "García",
+      "email": "ana.garcia@email.com",
+      "phone": "+51 987654324",
+      "age": 29,
+      "status": "active",
+      "registrationDate": "2023-01-18"
     },
     {
       "id": 5,
-      "firstName": "David",
-      "lastName": "Wilson",
-      "email": "david.wilson@example.com"
+      "firstname": "José",
+      "lastname": "Pérez",
+      "email": "jose.perez@email.com",
+      "phone": "+51 987654325",
+      "age": 35,
+      "status": "active",
+      "registrationDate": "2023-03-08"
     },
     {
       "id": 6,
-      "firstName": "Jessica",
-      "lastName": "Taylor",
-      "email": "jessica.taylor@example.com"
+      "firstname": "María",
+      "lastname": "López",
+      "email": "maria.lopez@email.com",
+      "phone": "+51 987654326",
+      "age": 27,
+      "status": "active",
+      "registrationDate": "2023-04-22"
     },
     {
       "id": 7,
-      "firstName": "Daniel",
-      "lastName": "Anderson",
-      "email": "daniel.anderson@example.com"
+      "firstname": "David",
+      "lastname": "Torres",
+      "email": "david.torres@email.com",
+      "phone": "+51 987654327",
+      "age": 31,
+      "status": "active",
+      "registrationDate": "2023-02-14"
     },
     {
       "id": 8,
-      "firstName": "Olivia",
-      "lastName": "Thomas",
-      "email": "olivia.thomas@example.com"
+      "firstname": "Carmen",
+      "lastname": "Ruiz",
+      "email": "carmen.ruiz@email.com",
+      "phone": "+51 987654328",
+      "age": 26,
+      "status": "active",
+      "registrationDate": "2023-05-03"
     },
     {
       "id": 9,
-      "firstName": "Matthew",
-      "lastName": "Jackson",
-      "email": "matthew.jackson@example.com"
+      "firstname": "Roberto",
+      "lastname": "Morales",
+      "email": "roberto.morales@email.com",
+      "phone": "+51 987654329",
+      "age": 33,
+      "status": "active",
+      "registrationDate": "2023-01-25"
     },
     {
       "id": 10,
-      "firstName": "Ava",
-      "lastName": "White",
-      "email": "ava.white@example.com"
+      "firstname": "Patricia",
+      "lastname": "Herrera",
+      "email": "patricia.herrera@email.com",
+      "phone": "+51 987654330",
+      "age": 30,
+      "status": "active",
+      "registrationDate": "2023-03-12"
     },
     {
       "id": 11,
-      "firstName": "Andrew",
-      "lastName": "Harris",
-      "email": "andrew.harris@example.com"
+      "firstname": "Fernando",
+      "lastname": "Castro",
+      "email": "fernando.castro@email.com",
+      "phone": "+51 987654331",
+      "age": 24,
+      "status": "active",
+      "registrationDate": "2023-04-18"
     },
     {
       "id": 12,
-      "firstName": "Isabella",
-      "lastName": "Martin",
-      "email": "isabella.martin@example.com"
+      "firstname": "Isabel",
+      "lastname": "Jiménez",
+      "email": "isabel.jimenez@email.com",
+      "phone": "+51 987654332",
+      "age": 28,
+      "status": "active",
+      "registrationDate": "2023-02-28"
     },
     {
       "id": 13,
-      "firstName": "Joshua",
-      "lastName": "Thompson",
-      "email": "joshua.thompson@example.com"
+      "firstname": "Ricardo",
+      "lastname": "Vargas",
+      "email": "ricardo.vargas@email.com",
+      "phone": "+51 987654333",
+      "age": 34,
+      "status": "active",
+      "registrationDate": "2023-01-10"
     },
     {
       "id": 14,
-      "firstName": "Mia",
-      "lastName": "Garcia",
-      "email": "mia.garcia@example.com"
+      "firstname": "Elena",
+      "lastname": "Ramírez",
+      "email": "elena.ramirez@email.com",
+      "phone": "+51 987654334",
+      "age": 29,
+      "status": "active",
+      "registrationDate": "2023-05-15"
     },
     {
       "id": 15,
-      "firstName": "Ethan",
-      "lastName": "Martinez",
-      "email": "ethan.martinez@example.com"
+      "firstname": "Andrés",
+      "lastname": "Mendez",
+      "email": "andres.mendez@email.com",
+      "phone": "+51 987654335",
+      "age": 26,
+      "status": "active",
+      "registrationDate": "2023-03-30"
     },
     {
-      "firstname": "as",
-      "lastname": "fasg",
-      "email": "agg",
-      "id": 16
+      "id": 16,
+      "firstname": "Valeria",
+      "lastname": "Silva",
+      "email": "valeria.silva@email.com",
+      "phone": "+51 987654336",
+      "age": 27,
+      "status": "active",
+      "registrationDate": "2023-04-05"
     },
     {
-      "firstname": "asf",
-      "lastname": "gfgg",
-      "email": "hh",
-      "id": 17
+      "id": 17,
+      "firstname": "Gonzalo",
+      "lastname": "Fernández",
+      "email": "gonzalo.fernandez@email.com",
+      "phone": "+51 987654337",
+      "age": 32,
+      "status": "active",
+      "registrationDate": "2023-02-08"
     },
     {
-      "firstName": "as",
-      "lastName": "fasf",
-      "email": "asgsga",
-      "id": 18
+      "id": 18,
+      "firstname": "Mónica",
+      "lastname": "Paredes",
+      "email": "monica.paredes@email.com",
+      "phone": "+51 987654338",
+      "age": 31,
+      "status": "active",
+      "registrationDate": "2023-01-22"
     },
     {
-      "firstName": "pedro",
-      "lastName": "piero",
-      "email": "todo_xqteuiero@outlook",
-      "id": 19
+      "id": 19,
+      "firstname": "Sergio",
+      "lastname": "Gutiérrez",
+      "email": "sergio.gutierrez@email.com",
+      "phone": "+51 987654339",
+      "age": 25,
+      "status": "active",
+      "registrationDate": "2023-05-08"
+    },
+    {
+      "id": 20,
+      "firstname": "Natalia",
+      "lastname": "Vega",
+      "email": "natalia.vega@email.com",
+      "phone": "+51 987654340",
+      "age": 28,
+      "status": "active",
+      "registrationDate": "2023-03-25"
+    },
+    {
+      "id": 21,
+      "firstname": "Álvaro",
+      "lastname": "Ortiz",
+      "email": "alvaro.ortiz@email.com",
+      "phone": "+51 987654341",
+      "age": 30,
+      "status": "active",
+      "registrationDate": "2023-02-12"
+    },
+    {
+      "id": 22,
+      "firstname": "Gabriela",
+      "lastname": "Rojas",
+      "email": "gabriela.rojas@email.com",
+      "phone": "+51 987654342",
+      "age": 26,
+      "status": "active",
+      "registrationDate": "2023-04-28"
+    },
+    {
+      "id": 23,
+      "firstname": "Emilio",
+      "lastname": "Campos",
+      "email": "emilio.campos@email.com",
+      "phone": "+51 987654343",
+      "age": 33,
+      "status": "active",
+      "registrationDate": "2023-01-30"
+    },
+    {
+      "id": 24,
+      "firstname": "Lorena",
+      "lastname": "Aguilar",
+      "email": "lorena.aguilar@email.com",
+      "phone": "+51 987654344",
+      "age": 29,
+      "status": "active",
+      "registrationDate": "2023-05-12"
     }
   ],
   "sections": [
     {
+      "id": 1,
+      "studentId": 1,
+      "type": "Orientación Vocacional",
+      "date": "2023-05-15",
+      "time": "10:00",
+      "endTime": "11:00",
+      "status": "confirmed",
+      "mode": "videollamada",
+      "notes": "Primera sesión de orientación"
+    },
+    {
+      "id": 2,
+      "studentId": 2,
+      "type": "Seguimiento",
+      "date": "2023-05-15",
+      "time": "12:30",
+      "endTime": "13:30",
+      "status": "confirmed",
+      "mode": "presencial",
+      "notes": "Seguimiento de progreso"
+    },
+    {
       "id": 3,
-      "time": "13:00",
       "studentId": 3,
-      "format": "in-person",
-      "status": "confirmed"
+      "type": "Primera Consulta",
+      "date": "2023-05-15",
+      "time": "15:00",
+      "endTime": "17:00",
+      "status": "pending",
+      "mode": "videollamada",
+      "notes": "Evaluación inicial"
     },
     {
       "id": 4,
-      "time": "14:30",
-      "studentId": 1,
-      "format": "video-call",
-      "status": "pending"
+      "studentId": 4,
+      "type": "Terapia Individual",
+      "date": "2023-05-16",
+      "time": "09:00",
+      "endTime": "10:00",
+      "status": "confirmed",
+      "mode": "presencial",
+      "notes": "Sesión de terapia"
     },
     {
       "id": 5,
+      "studentId": 5,
+      "type": "Orientación Vocacional",
+      "date": "2023-05-16",
+      "time": "14:00",
+      "endTime": "15:00",
+      "status": "confirmed",
+      "mode": "videollamada",
+      "notes": "Exploración de intereses"
+    },
+    {
+      "id": 6,
+      "studentId": 6,
+      "type": "Seguimiento",
+      "date": "2023-05-17",
+      "time": "11:00",
+      "endTime": "12:00",
+      "status": "pending",
+      "mode": "presencial",
+      "notes": "Revisión de objetivos"
+    },
+    {
+      "id": 7,
+      "studentId": 7,
+      "type": "Primera Consulta",
+      "date": "2023-05-17",
       "time": "16:00",
-      "studentId": 2,
-      "format": "in-person",
-      "status": "confirmed"
+      "endTime": "17:30",
+      "status": "confirmed",
+      "mode": "videollamada",
+      "notes": "Consulta inicial"
+    },
+    {
+      "id": 8,
+      "studentId": 8,
+      "type": "Terapia Individual",
+      "date": "2023-05-18",
+      "time": "10:30",
+      "endTime": "11:30",
+      "status": "confirmed",
+      "mode": "presencial",
+      "notes": "Trabajo en autoestima"
+    },
+    {
+      "id": 9,
+      "studentId": 9,
+      "type": "Orientación Vocacional",
+      "date": "2023-05-18",
+      "time": "15:30",
+      "endTime": "16:30",
+      "status": "pending",
+      "mode": "videollamada",
+      "notes": "Análisis de aptitudes"
+    },
+    {
+      "id": 10,
+      "studentId": 10,
+      "type": "Seguimiento",
+      "date": "2023-05-19",
+      "time": "13:00",
+      "endTime": "14:00",
+      "status": "confirmed",
+      "mode": "presencial",
+      "notes": "Evaluación de progreso"
+    },
+    {
+      "id": 11,
+      "studentId": 11,
+      "type": "Primera Consulta",
+      "date": "2023-05-19",
+      "time": "17:00",
+      "endTime": "18:00",
+      "status": "pending",
+      "mode": "videollamada",
+      "notes": "Consulta inicial"
+    },
+    {
+      "id": 12,
+      "studentId": 12,
+      "type": "Terapia Individual",
+      "date": "2023-05-20",
+      "time": "09:30",
+      "endTime": "10:30",
+      "status": "confirmed",
+      "mode": "presencial",
+      "notes": "Manejo de ansiedad"
     }
-  ]
+  ],
+  "dashboard": {
+    "activeStudents": 24,
+    "scheduledSessions": 12,
+    "consultationHours": 32,
+    "averageRating": 4.9,
+    "totalRatings": 87,
+    "lastUpdate": "2023-05-10"
+  },
+  "psychologist": {
+    "id": 1,
+    "name": "Dra. Ana Martínez",
+    "title": "Psicóloga Vocacional",
+    "email": "ana.martinez@psychohealth.com",
+    "phone": "+51 987654321",
+    "specialties": ["Orientación Vocacional", "Terapia Individual", "Psicología Educativa"]
+  }
 }
