@@ -25,6 +25,7 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
   sectionData :Sections;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = [
+
     'id', 'studentId',
     'type',
     'date',
@@ -35,7 +36,7 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
     'notes', 'actions' // Esto suele ser una columna para botones de editar/eliminar
   ];
   isEditMode: boolean;
-
+  editingSectionId: number | null = null;
 
   @ViewChild(MatPaginator, { static: false}) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false}) sort!: MatSort;
@@ -51,7 +52,7 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
   private resetEditState(): void {
     this.isEditMode = false;
     this.sectionData = {} as Sections;
-
+    this.editingSectionId = null;
   }
 
 
@@ -61,6 +62,7 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
     this.sectionService.getAll()
       .subscribe((response: any) => {
         this.dataSource.data = response;
+        console.log('Secciones cargadas:', response);
       });
 
   };
@@ -86,9 +88,9 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
           .filter((sections: Sections) => {
             return sections.id !== sectionId ? sections : false;
           });
+        console.log('Sección eliminada:', sectionId);
       });
   };
-
   // UI Event Handlers
 
   /*onEditItem(element: Sections) {
@@ -140,8 +142,6 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
     this.getAllSections();
   }
 
-  editingSectionId: number | null = null; // Agrega esta línea
-
   onEditItem(element: Sections) {
     this.isEditMode = true;
     this.sectionData = { ...element };
@@ -154,12 +154,40 @@ export class SectionsManagementComponent implements OnInit, AfterViewInit  {
   }
 
   onStudentUpdated(element: Sections) {
-    const index = this.dataSource.data.findIndex(s => s.id === element.id);
-    if (index !== -1) {
-      this.dataSource.data[index] = { ...element };
-      this.dataSource.data = [...this.dataSource.data]; // Forzar render
-    }
+    console.log('Evento onStudentUpdated recibido:', element);
+    this.sectionData = { ...element }; // Asegurar que tenemos los datos actualizados
+    this.updateSection(); // Llamar al método que hace la petición HTTP
     this.resetEditState();
-    this.editingSectionId = null;
   }
+
+  private updateSection(): void {
+    if (!this.sectionData.id) {
+      console.error('ID de sección faltante para actualización');
+      return;
+    }
+
+    console.log('Actualizando sección con datos:', this.sectionData);
+
+    this.sectionService.update(this.sectionData.id, this.sectionData)
+      .subscribe({
+        next: (response: any) => {
+          console.log('Sección actualizada en servidor:', response);
+
+          // Actualizar el dataSource local
+          const index = this.dataSource.data.findIndex(s => s.id === this.sectionData.id);
+          if (index !== -1) {
+            this.dataSource.data[index] = { ...response };
+            this.dataSource.data = [...this.dataSource.data]; // Forzar render
+          }
+
+          console.log('DataSource actualizado:', this.dataSource.data);
+          alert('Sección actualizada correctamente');
+        },
+        error: (error) => {
+          console.error('Error al actualizar sección:', error);
+          alert('Error al actualizar la sección: ' + (error.error?.message || error.message));
+        }
+      });
+  };
+
 }

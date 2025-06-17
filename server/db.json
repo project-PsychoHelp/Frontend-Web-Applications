@@ -245,12 +245,12 @@
     {
       "id": 1,
       "studentId": 1,
-      "type": "Orientación Vocacional",
+      "type": "seguimiento",
       "date": "2023-05-15",
       "time": "10:00",
       "endTime": "11:00",
-      "status": "confirmed",
-      "mode": "videollamada",
+      "status": "confirmada",
+      "mode": "virtual",
       "notes": "Primera sesión de orientación"
     },
     {
@@ -389,6 +389,10 @@
     "title": "Psicóloga Vocacional",
     "email": "ana.martinez@psychohealth.com",
     "phone": "+51 987654321",
-    "specialties": ["Orientación Vocacional", "Terapia Individual", "Psicología Educativa"]
+    "specialties": [
+      "Orientación Vocacional",
+      "Terapia Individual",
+      "Psicología Educativa"
+    ]
   }
 }

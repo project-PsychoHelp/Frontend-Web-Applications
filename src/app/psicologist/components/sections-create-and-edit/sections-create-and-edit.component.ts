@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { Sections } from "../../model/sections.entity";
 import { FormsModule, NgForm } from "@angular/forms";
@@ -8,6 +8,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatSelectModule } from "@angular/material/select";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { MatNativeDateModule } from "@angular/material/core";
+import {NgForOf} from '@angular/common';
 
 @Component({
   selector: 'app-sections-create-and-edit',
@@ -18,45 +19,51 @@ import { MatNativeDateModule } from "@angular/material/core";
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    NgForOf
   ],
   templateUrl: './sections-create-and-edit.component.html',
   styleUrl: './sections-create-and-edit.component.css'
 })
-export class SectionsCreateAndEditComponent {
+export class SectionsCreateAndEditComponent implements OnInit {
   // Attributes
-  @Input() sections: Sections;
+  @Input() sections: Sections = new Sections();
   @Input() editMode: boolean = false;
   @Output() sectionAdded: EventEmitter<Sections> = new EventEmitter<Sections>();
   @Output() sectionUpdated: EventEmitter<Sections> = new EventEmitter<Sections>();
   @Output() editCanceled: EventEmitter<any> = new EventEmitter();
-  @ViewChild('sectionsForm', {static: false}) sectionsForm!: NgForm;
+  @ViewChild('sessionForm', {static: false}) sectionsForm!: NgForm;
 
-  // Opciones para los dropdowns
+  // Opciones para los dropdowns - corregidas para coincidir con el HTML
   sessionTypes = [
-    'Orientación Vocacional',
-    'Seguimiento',
-    'Primera Consulta',
-    'Terapia Individual',
-    'Evaluación Psicológica'
+    { value: 'individual', label: 'Individual' },
+    { value: 'grupal', label: 'Grupal' },
+    { value: 'seguimiento', label: 'Seguimiento' },
+    { value: 'evaluacion', label: 'Evaluación' }
   ];
 
   sessionModes = [
-    'videollamada',
-    'presencial',
-    'telefónica'
+    { value: 'presencial', label: 'Presencial' },
+    { value: 'virtual', label: 'Virtual' },
+    { value: 'hibrida', label: 'Híbrida' }
   ];
 
   sessionStatuses = [
-    'confirmed',
-    'pending',
-    'completed',
-    'cancelled'
+    { value: 'programada', label: 'Programada' },
+    { value: 'confirmada', label: 'Confirmada' },
+    { value: 'completada', label: 'Completada' },
+    { value: 'cancelada', label: 'Cancelada' },
+    { value: 'pendiente', label: 'Pendiente' }
   ];
 
   // Methods
-  constructor() {
-    this.sections = new Sections();
+  constructor() {}
+
+  ngOnInit(): void {
+    // Si no se proporciona sections, crear uno nuevo
+    if (!this.sections) {
+      this.sections = new Sections();
+    }
   }
 
   // Private methods
@@ -70,7 +77,7 @@ export class SectionsCreateAndEditComponent {
 
   // Event Handlers
   onSubmit(): void {
-    if (this.sectionsForm.form.valid) {
+    if (this.sectionsForm && this.sectionsForm.form.valid) {
       let emitter: EventEmitter<Sections> = this.editMode ? this.sectionUpdated : this.sectionAdded;
       emitter.emit(this.sections);
       this.resetEditState();
@@ -83,5 +90,4 @@ export class SectionsCreateAndEditComponent {
     this.editCanceled.emit();
     this.resetEditState();
   }
-
 }
