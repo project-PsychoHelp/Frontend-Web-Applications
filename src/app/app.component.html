@@ -1,21 +1,28 @@
-<!--<app-header-content></app-header-content> -->
-<div class="layout">
+<!-- Conditional rendering of Toolbar -->
+<div *ngIf="showToolbarAndSidenav" class="toolbar-container">
   <app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
+</div>
 
+<!-- Sidenav and main content layout -->
+<div class="layout" *ngIf="showToolbarAndSidenav">
   <mat-sidenav-container class="sidenav-container">
-    <!-- Sidebar -->
     <mat-sidenav
       mode="side"
       [opened]="isSidenavOpen"
       fixedTopGap="64">
-      <!--  [fixedInViewport]="true"-->
       <app-sidebar></app-sidebar>
     </mat-sidenav>
 
-    <!-- Main Content -->
     <mat-sidenav-content>
-
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
+
+<!-- Full-screen content for /home -->
+<div class="full-screen-content" *ngIf="!showToolbarAndSidenav">
+  <div class="home-wrapper">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

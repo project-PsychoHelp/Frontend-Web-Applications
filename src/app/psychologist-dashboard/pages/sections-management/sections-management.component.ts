@@ -16,8 +16,8 @@ import {MatButton} from '@angular/material/button';
 @Component({
   selector: 'app-sections-management',
   imports: [MatCardModule, CommonModule, MatPaginator, MatSort, MatIconModule, SectionsCreateAndEditComponent, MatTableModule, NgClass, TranslateModule, MatButton],
-  templateUrl: './sections-managament.component.html',
-  styleUrl: './sections-managament.component.css'
+  templateUrl: './sections-management.component.html',
+  styleUrl: './sections-management.component.css'
 })
 export class SectionsManagementComponent implements OnInit, AfterViewInit  {
   // Attributes

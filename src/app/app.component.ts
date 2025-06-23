@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {Router, RouterOutlet, NavigationEnd } from '@angular/router';
 import { OnInit, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,6 +23,9 @@ import {  RecommendedCareersComponent } from './student-dashboard/components/rec
 import { CareerDialogComponent } from './student-dashboard/components/career-dialog/career-dialog.component';
 import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
 import {ToolbarComponent} from './shared/components/toolbar/toolbar.component';
+import { HomeComponent } from './public/pages/home/home.component';
+import { SectionsManagementComponent } from './psychologist-dashboard/pages/sections-management/sections-management.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -32,20 +35,21 @@ import {ToolbarComponent} from './shared/components/toolbar/toolbar.component';
     MatDividerModule, MatListModule, LanguageSwitcherComponent,
     HeaderContentComponent, FooterContentComponent, MatProgressBarModule, ProgressComponent,
     MatDialogModule, RecommendedCareersComponent,
-    CareerDialogComponent, SidebarComponent, ToolbarComponent, TranslatePipe],
+    CareerDialogComponent, SidebarComponent, ToolbarComponent, TranslatePipe,HomeComponent,  CommonModule ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit  {
   title = 'PsychoHelp';
 
-  @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
+  @ViewChild(MatSidenav, {static: false}) sidenav!: MatSidenav;
   isSidenavOpen = true;
   sidenavMode: 'side' | 'over' = 'side';
   options = [];
+  showToolbarAndSidenav = true; // Controls visibility
 
 
-  constructor(private translate: TranslateService, private observer: BreakpointObserver) {
+  constructor(private translate: TranslateService, private observer: BreakpointObserver, private router: Router) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
@@ -61,13 +65,27 @@ export class AppComponent implements OnInit  {
           this.isSidenavOpen = true;  // Se abre
         }
       });
-  }
 
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.showToolbarAndSidenav = event.urlAfterRedirects !== '/home';
+        this.ngAfterViewInit();
+      }
+    });
+  }
+  ngAfterViewInit(): void {
+    // Ensure sidenav is initialized only when rendered
+    if (this.sidenav) {
+      this.sidenav.mode = this.sidenavMode;
+      this.sidenav.opened = this.isSidenavOpen;
+    }
+  }
 
 
   toggleSidenav(): void {
     this.sidenav.toggle();
     this.isSidenavOpen = !this.isSidenavOpen;
+    this.ngAfterViewInit();
   }
 }
 

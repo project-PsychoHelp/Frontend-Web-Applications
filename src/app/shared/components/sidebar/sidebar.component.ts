@@ -24,12 +24,12 @@ import {NgForOf} from '@angular/common';
 })
 export class SidebarComponent {
   navItems = [
-    { label: 'SIDEBAR.DASHBOARD', route: '/dashboard', icon: 'dashboard' },
-    { label: 'SIDEBAR.TESTS', route: '/tests', icon: 'assignment' },
-    { label: 'SIDEBAR.CAREERS', route: '/careers', icon: 'school' },
-    { label: 'SIDEBAR.SESSIONS', route: '/sessions', icon: 'calendar_month' },
-    { label: 'SIDEBAR.RESOURCES', route: '/resources', icon: 'import_contacts' },
-    { label: 'SIDEBAR.PROFILE', route: '/profile', icon: 'person' },
-    { label: 'SIDEBAR.SETTINGS', route: '/settings', icon: 'settings' }
+    { label: 'SIDEBAR.DASHBOARD', route: 'student/dashboard', icon: 'dashboard' },
+    { label: 'SIDEBAR.TESTS', route: 'student/tests', icon: 'assignment' },
+    { label: 'SIDEBAR.CAREERS', route: 'student/careers', icon: 'school' },
+    { label: 'SIDEBAR.SESSIONS', route: 'student/sessions', icon: 'calendar_month' },
+    { label: 'SIDEBAR.RESOURCES', route: 'student/resources', icon: 'import_contacts' },
+    { label: 'SIDEBAR.PROFILE', route: 'student/profile', icon: 'person' },
+    { label: 'SIDEBAR.SETTINGS', route: 'student/settings', icon: 'settings' }
   ];
 }
