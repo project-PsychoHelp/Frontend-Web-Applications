@@ -27,6 +27,7 @@ import { HomeComponent } from './public/pages/home/home.component';
 import { SectionsManagementComponent } from './psychologist-dashboard/pages/sections-management/sections-management.component';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -42,19 +43,42 @@ import { CommonModule } from '@angular/common';
 export class AppComponent implements OnInit  {
   title = 'PsychoHelp';
 
-  @ViewChild(MatSidenav, {static: false}) sidenav!: MatSidenav;
+  @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
   isSidenavOpen = true;
+  isStudent = true; // Toggle between student and psychologist
   sidenavMode: 'side' | 'over' = 'side';
-  options = [];
   showToolbarAndSidenav = true; // Controls visibility
 
+  options_student = [
+    { label: 'SIDEBAR.HOME', route: 'student/home', icon: 'home' },
+    { label: 'SIDEBAR.PROFILE', route: 'student/profile', icon: 'person' },
+    { label: 'SIDEBAR.TESTS', route: 'student/tests', icon: 'quiz' },
+    { label: 'SIDEBAR.SESSIONS', route: 'student/sessions', icon: 'calendar_month' },
+    { label: 'SIDEBAR.DASHBOARD', route: 'student/dashboard', icon: 'dashboard' },
+    { label: 'SIDEBAR.SETTINGS', route: 'student/settings', icon: 'settings' }
+  ];
+
+  options_psychologist = [
+    { label: 'SIDEBAR.HOME', route: 'psychologist/home', icon: 'home' },
+    { label: 'SIDEBAR.PROFILE', route: 'psychologist/profile', icon: 'person' },
+    { label: 'SIDEBAR.SESSIONS', route: 'psychologist/sessions', icon: 'schedule' },
+    { label: 'SIDEBAR.DASHBOARD', route: 'psychologist/dashboard', icon: 'dashboard' },
+    { label: 'SIDEBAR.PATIENTS', route: 'psychologist/students', icon: 'group' },
+    { label: 'SIDEBAR.SETTINGS', route: 'psychologist/settings', icon: 'settings'},
+  ];
+
+  options = this.options_student;
+
+  /*toggleOptions() {
+    this.options = this.options === this.options_student ? this.options_psychologist : this.options_student;
+  }*/
 
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver, private router: Router) {
     translate.setDefaultLang('en');
     translate.use('en');
   }
-
+ // Observer to handle screen size changes and adjust sidenav mode
   ngOnInit(): void {
     this.observer.observe(['(max-width: 1280px)']) // Observa el ancho de la pantalla
       .subscribe((response) => {  // Se suscribe a los cambios en el ancho de la pantalla
@@ -67,12 +91,54 @@ export class AppComponent implements OnInit  {
         }
       });
 
+    // Subscription to router events to update options based on the current route
     this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        if (/^\/psychologist(\/|$)/.test(event.urlAfterRedirects)) {
+          this.isStudent = false;
+          this.options = this.options_psychologist;
+        } else if (/^\/student(\/|$)/.test(event.urlAfterRedirects)) {
+          this.isStudent = true;
+          this.options = this.options_student;
+        }
+      }
+    });
+
+    // Initially set options based on the current URL
+    if (/^\/psychologist(\/|$)/.test(this.router.url)) {
+      this.isStudent = false;
+      this.options = this.options_psychologist;
+    } else if (/^\/student(\/|$)/.test(this.router.url)) {
+      this.isStudent = true;
+      this.options = this.options_student;
+    }
+    /*this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         this.showToolbarAndSidenav = event.urlAfterRedirects !== '/home';
         this.ngAfterViewInit();
       }
-    });
+    });*/
+  }
+  toggleOptions() {
+    // Cambia el tipo de usuario y la lista de opciones
+    this.isStudent = !this.isStudent;
+    this.options = this.isStudent ? this.options_student : this.options_psychologist;
+
+    // Obtiene la ruta actual
+    const currentUrl = this.router.url;
+    let newUrl = currentUrl;
+
+    // Reemplaza la parte del tipo de usuario en la URL
+    if (currentUrl.startsWith('/student/')) {
+      newUrl = currentUrl.replace('/student/', '/psychologist/');
+    } else if (currentUrl.startsWith('/psychologist/')) {
+      newUrl = currentUrl.replace('/psychologist/', '/student/');
+    }
+
+    // Navega a la nueva ruta si cambió
+    if (newUrl !== currentUrl) {
+      this.router.navigateByUrl(newUrl);
+    }
   }
   ngAfterViewInit(): void {
     // Ensure sidenav is initialized only when rendered
