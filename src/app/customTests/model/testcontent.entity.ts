@@ -1,4 +1,4 @@
-export class Testcontent {
+export class TestContent {
   id: number;
   question: string;
   options: string[];

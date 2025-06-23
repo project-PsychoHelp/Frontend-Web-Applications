@@ -4,8 +4,8 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort } from "@angular/material/sort";
 import { MatIconModule } from "@angular/material/icon";
-import { TestscontentService } from "../../services/testscontent.service";
-import { Testcontent } from "../../model/testcontent.entity";
+import { TestsContentService } from "../../services/testscontent.service";
+import { TestContent } from "../../model/testcontent.entity";
 import { TestcontentCreateAndEditComponent } from "../../components/testcontent-create-and-edit/testcontent-create-and-edit.component";
 import { NgClass } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
@@ -15,14 +15,14 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-testcontent-management',
+  selector: 'app-test-content-management',
   imports: [MatCardModule, CommonModule, MatPaginator, MatSort, MatIconModule, TestcontentCreateAndEditComponent, MatTableModule, NgClass, TranslateModule],
-  templateUrl: './testcontent-management.component.html',
-  styleUrl: './testcontent-management.component.css'
+  templateUrl: './test-content-management.component.html',
+  styleUrl: './test-content-management.component.css'
 })
-export class TestcontentManagementComponent implements OnInit, AfterViewInit {
+export class TestContentManagementComponent implements OnInit, AfterViewInit {
   // Attributes
-  testcontentData: Testcontent;
+  testContentData: TestContent;
   dataSource!: MatTableDataSource<any>;
   displayedColumns: string[] = ['id', 'question', 'options', 'correctAnswer', 'explanation', 'points', 'actions'];
   isEditMode: boolean;
@@ -31,80 +31,80 @@ export class TestcontentManagementComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
 
   // Constructor
-  constructor(private testcontentService: TestscontentService) {
+  constructor(private testContentService: TestsContentService) {
     this.isEditMode = false;
-    this.testcontentData = {} as Testcontent;
+    this.testContentData = {} as TestContent;
     this.dataSource = new MatTableDataSource<any>();
   }
 
   // Private Methods
   private resetEditState(): void {
     this.isEditMode = false;
-    this.testcontentData = {} as Testcontent;
+    this.testContentData = {} as TestContent;
   }
 
   // CRUD Actions
 
-  private getAllTestcontents(): void {
-    this.testcontentService.getAll()
+  private getAllTestContents(): void {
+    this.testContentService.getAll()
       .subscribe((response: any) => {
         this.dataSource.data = response;
       });
   }
 
-  private createTestcontent(): void {
-    this.testcontentService.create(this.testcontentData)
+  private createTestContent(): void {
+    this.testContentService.create(this.testContentData)
       .subscribe((response: any) => {
         this.dataSource.data.push({ ...response });
-        this.dataSource.data = this.dataSource.data.map((testcontent: Testcontent) => testcontent);
+        this.dataSource.data = this.dataSource.data.map((testContent: TestContent) => testContent);
       });
   }
 
-  private updateTestcontent(): void {
-    let testcontentToUpdate: Testcontent = this.testcontentData;
-    this.testcontentService.update(this.testcontentData.id, testcontentToUpdate)
+  private updateTestContent(): void {
+    let testContentToUpdate: TestContent = this.testContentData;
+    this.testContentService.update(this.testContentData.id, testContentToUpdate)
       .subscribe((response: any) => {
-        this.dataSource.data = this.dataSource.data.map((testcontent: Testcontent) => {
-          if (testcontent.id === response.id) {
+        this.dataSource.data = this.dataSource.data.map((testContent: TestContent) => {
+          if (testContent.id === response.id) {
             return response;
           }
-          return testcontent;
+          return testContent;
         });
       });
   }
 
-  private deleteTestcontent(testcontentId: number): void {
-    this.testcontentService.delete(testcontentId)
+  private deleteTestContent(testContentId: number): void {
+    this.testContentService.delete(testContentId)
       .subscribe(() => {
-        this.dataSource.data = this.dataSource.data.filter((testcontent: Testcontent) => testcontent.id !== testcontentId);
+        this.dataSource.data = this.dataSource.data.filter((testContent: TestContent) => testContent.id !== testContentId);
       });
   }
 
   // UI Event Handlers
 
-  onEditItem(element: Testcontent) {
+  onEditItem(element: TestContent) {
     this.isEditMode = true;
-    this.testcontentData = element;
+    this.testContentData = element;
   }
 
-  onDeleteItem(element: Testcontent) {
-    this.deleteTestcontent(element.id);
+  onDeleteItem(element: TestContent) {
+    this.deleteTestContent(element.id);
   }
 
   onCancelEdit() {
     this.resetEditState();
-    this.getAllTestcontents();
+    this.getAllTestContents();
   }
 
-  onTestcontentAdded(element: Testcontent) {
-    this.testcontentData = element;
-    this.createTestcontent();
+  onTestContentAdded(element: TestContent) {
+    this.testContentData = element;
+    this.createTestContent();
     this.resetEditState();
   }
 
-  onTestcontentUpdated(element: Testcontent) {
-    this.testcontentData = element;
-    this.updateTestcontent();
+  onTestContentUpdated(element: TestContent) {
+    this.testContentData = element;
+    this.updateTestContent();
     this.resetEditState();
   }
 
@@ -116,6 +116,6 @@ export class TestcontentManagementComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.getAllTestcontents();
+    this.getAllTestContents();
   }
 }

@@ -26,10 +26,10 @@
 
   <!-- Add/Edit Form -->
   <app-testcontent-create-and-edit (editCanceled)="onCancelEdit()"
-                                   (testcontentAdded)="onTestcontentAdded($event)"
-                                   (testcontentUpdated)="onTestcontentUpdated($event)"
+                                   (testcontentAdded)="onTestContentAdded($event)"
+                                   (testcontentUpdated)="onTestContentUpdated($event)"
                                    [editMode]="isEditMode"
-                                   [testcontent]="testcontentData"></app-testcontent-create-and-edit>
+                                   [testcontent]="testContentData"></app-testcontent-create-and-edit>
 
   <!-- Tabla de testcontents con paginación -->
   <div class="card-container">
@@ -82,7 +82,7 @@
       </ng-container>
 
       <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
-      <tr *matRowDef="let row; columns: displayedColumns" [ngClass]="{'editable-row': testcontentData.id === row.id}" mat-row></tr>
+      <tr *matRowDef="let row; columns: displayedColumns" [ngClass]="{'editable-row': testContentData.id === row.id}" mat-row></tr>
     </table>
 
     <!-- Paginador -->
