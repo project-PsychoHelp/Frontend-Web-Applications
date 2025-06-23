@@ -6,9 +6,10 @@ import {
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
 import {SectionsManagementComponent} from './psychologist-dashboard/pages/sections-management/sections-management.component';
 import {HomeComponent} from './public/pages/home/home.component';
-
+import { StudentPageInitComponent } from "./public/pages/student-page-init/student-page-init.component";
+import { PyschologistPageInitComponent } from "./public/pages/pyschologist-page-init/pyschologist-page-init.component";
 export const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: 'customTests/tests', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   { path: 'about', component: PageNotFoundComponent },
   { path: 'student',
@@ -28,7 +29,9 @@ export const routes: Routes = [
     { path: 'dashboard', component: SectionsManagementComponent },
     { path: '**', component: PageNotFoundComponent }
   ]},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: PageNotFoundComponent},
+  { path: 'inicio-student', component: StudentPageInitComponent },
+  { path: 'inicio-psychologist', component: PyschologistPageInitComponent },
 
 ];
 

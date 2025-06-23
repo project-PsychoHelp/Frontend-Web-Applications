@@ -49,6 +49,7 @@ export class AppComponent implements OnInit  {
   showToolbarAndSidenav = true; // Controls visibility
 
 
+
   constructor(private translate: TranslateService, private observer: BreakpointObserver, private router: Router) {
     translate.setDefaultLang('en');
     translate.use('en');

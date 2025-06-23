@@ -789,5 +789,56 @@
       "Terapia Individual",
       "Psicología Educativa"
     ]
-  }
+  },
+  "testscontent": [
+    {
+      "id": 1,
+      "question": "¿Qué actividad disfrutas más en tu tiempo libre?",
+      "options": [
+        "Leer libros",
+        "Hacer deporte",
+        "Crear arte",
+        "Resolver problemas matemáticos"
+      ],
+      "correctAnswer": "Ninguna respuesta es incorrecta",
+      "explanation": "Esta pregunta ayuda a identificar tus intereses personales.",
+      "points": 10
+    },
+    {
+      "id": 2,
+      "question": "¿Qué tipo de tareas prefieres realizar?",
+      "options": [
+        "Trabajar en equipo",
+        "Investigar y analizar",
+        "Diseñar y construir",
+        "Ayudar a otras personas"
+      ],
+      "correctAnswer": "Ninguna respuesta es incorrecta",
+      "explanation": "Esta pregunta evalúa tus preferencias laborales.",
+      "points": 15
+    },
+    {
+      "options": [
+        "eeee",
+        "qeqee"
+      ],
+      "question": "qeqw",
+      "correctAnswer": "eqwe",
+      "explanation": "ewqewq",
+      "points": 10,
+      "id": 3
+    },
+    {
+      "options": [
+        "eqweqwewqe",
+        "eqwewq",
+        "qqqqq"
+      ],
+      "correctAnswer": "eqweqwe",
+      "question": "eqwe",
+      "explanation": "ewq",
+      "points": 15,
+      "id": 4
+    }
+  ]
 }
