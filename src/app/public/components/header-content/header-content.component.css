@@ -1,17 +1,24 @@
 .spacer {
   flex: 1 1 auto;
 }
+
 .blue-text {
   color: skyblue;
   font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
   font-weight: bold;
 }
+
 .tittle {
-          color: black;
-          font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
-          font-weight: bold;
+  color: black;
+  font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
+  font-weight: bold;
 }
-.dot-icon{
+
+.name-logo{
+  cursor: pointer;
+}
+
+.dot-icon {
   color: red;
 
 }
@@ -22,9 +29,10 @@
   height: 100%;
   width: 100%;
   background: #fff !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   z-index: 10;
 }
+
 :host > * {
   background: #fff !important;
   flex: 1 1 auto;
