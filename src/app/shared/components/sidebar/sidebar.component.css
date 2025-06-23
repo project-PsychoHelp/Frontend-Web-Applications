@@ -1,0 +1,38 @@
+mat-nav-list {
+  padding-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  //background-color: #d31717;
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  background: #e3f2fd;
+}
+
+a.active {
+  background: #1976d2;
+  color: white;
+}
+
+a.active mat-icon {
+  color: white;
+}
+
+mat-icon {
+  margin-right: 16px;
+  color: #1976d2;
+}
+
+span {
+  font-size: 16px;
+}

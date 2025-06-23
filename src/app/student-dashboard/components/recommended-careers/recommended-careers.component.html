@@ -1,0 +1,23 @@
+<div class="careers-section" *ngIf="student && student.recommendedCareers.length > 0">
+  <h2>{{ 'CAREERS.TITLE' | translate }}</h2>
+  <p class="subtitle">{{'CAREERS.SUBTITLE' | translate}}</p>
+
+  <!-- Career Cards -->
+  <div class="career-cards">
+    <div class="career-card" *ngFor="let career of student.recommendedCareers">
+      <mat-icon class="career-icon">school</mat-icon>
+      <div class="career-info">
+        <h3>{{ career.name | translate }}</h3>
+        <p>{{ career.description | translate }}</p>
+      </div>
+      <span class="compatibility">{{ career.getCompatibilityLabel() | translate }}</span>
+    </div>
+  </div>
+
+  <!-- View All Button -->
+  <div class="view-all">
+    <button mat-button color="primary" (click)="openCareerDialog()">
+      {{ 'CAREERS.VIEW_ALL' | translate }}
+    </button>
+  </div>
+</div>

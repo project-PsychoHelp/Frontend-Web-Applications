@@ -1,4 +1,54 @@
 {
+  "APP_NAME": "PsychoHealth",
+  "USER": {
+    "STUDENT": "Estudiante",
+    "PSYCHOLOGIST": "Psicólogo"
+  },
+  "PROGRESS": {
+    "TITLE": "Tu progreso",
+    "SUBTITLE": "Completa todos los tests para obtener recomendaciones precisas",
+    "GENERAL": "Progreso general",
+    "COMPLETED_ON": "Completado el",
+    "ESTIMATED_TIME": "minutos aproximadamente",
+    "NAME": {
+      "INTEREST": "Test de Intereses",
+      "APTITUDES": "Test de Aptitudes",
+      "PERSONALITY": "Test de Personalidad"
+    },
+    "STATUS": {
+      "COMPLETED": "Completado",
+      "PENDING": "Pendiente"
+    }
+  },
+  "CAREERS": {
+    "TITLE": "Carreras recomendadas",
+    "SUBTITLE": "Basadas en tus resultados de tests",
+    "VIEW_ALL": "Ver todas las carreras recomendadas",
+    "DIALOG_TITLE": "Todas las carreras recomendadas",
+    "CLOSE": "Cerrar",
+    "Ingeniería en Sistemas": "Ingeniería en Sistemas",
+    "Psicología": "Psicología",
+    "Arquitectura": "Arquitectura"
+  },
+
+  "92% de coincidencia": "92% de coincidencia",
+  "87% de coincidencia": "87% de coincidencia",
+  "83% de coincidencia": "83% de coincidencia",
+
+  "SIDEBAR": {
+    "DASHBOARD": "Panel",
+    "TESTS": "Tests",
+    "CAREERS": "Carreras",
+    "SESSIONS": "Sesiones",
+    "RESOURCES": "Recursos",
+    "PROFILE": "Mi perfil",
+    "SETTINGS": "Configuración"
+  },
+  "PAGE_NOT_FOUND": {
+    "TITLE": "Página no encontrada",
+    "MESSAGE": "La página que estás buscando no existe.",
+    "BACK_TO_DASHBOARD": "Volver al Panel"
+  },
   "footer": {
     "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
     "intro": "Desarrollado ",

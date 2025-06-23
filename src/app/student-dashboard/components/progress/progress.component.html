@@ -1,0 +1,33 @@
+<span class="main-title">{{'SIDEBAR.DASHBOARD' | translate}}</span>
+<div class="progress-section" *ngIf="student">
+  <h2>{{ 'PROGRESS.TITLE' | translate }}</h2>
+  <p class="subtitle">{{ 'PROGRESS.SUBTITLE' | translate }}</p>
+
+  <!-- Overall Progress -->
+  <div class="overall-progress">
+    <span class="progress-label">{{ 'PROGRESS.GENERAL' | translate }}</span>
+    <mat-progress-bar mode="determinate" [value]="student.progress.overallPercentage"></mat-progress-bar>
+    <span class="progress-percentage">{{ student.progress.overallPercentage }}%</span>
+  </div>
+
+  <!-- Test Cards -->
+  <div class="test-cards">
+    <div class="test-card" *ngFor="let test of student.progress.tests">
+      <mat-icon class="test-icon" [ngClass]="{'completed': test.status === 'Completado'}">
+        {{ test.status === 'Completado' ? 'check_circle' : 'pending' }}
+      </mat-icon>
+      <div class="test-info">
+        <h3 *ngIf="test.name === 'Test de Intereses'">{{ 'PROGRESS.NAME.INTEREST' | translate }}</h3>
+        <h3 *ngIf="test.name === 'Test de Aptitudes'">{{ 'PROGRESS.NAME.APTITUDES' | translate }}</h3>
+        <h3 *ngIf="test.name === 'Test de Personalidad'">{{ 'PROGRESS.NAME.PERSONALITY' | translate }}</h3>
+        <p *ngIf="test.status === 'Completado'">{{ 'PROGRESS.COMPLETED_ON' | translate }} {{ test.completionDate }}</p>
+        <p *ngIf="test.status === 'Pendiente'">{{ test.estimatedTime }} {{'PROGRESS.ESTIMATED_TIME' | translate }}</p>
+      </div>
+      <span class="test-status" [ngClass]="{'completed': test.status === 'Completado'}"
+      >
+        {{ test.status }}
+      </span>
+    </div>
+  </div>
+</div>
+<app-recommended-careers/>
