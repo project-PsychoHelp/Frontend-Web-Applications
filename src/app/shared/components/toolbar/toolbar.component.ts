@@ -6,6 +6,7 @@ import {MatIcon} from '@angular/material/icon';
 import {MatIconButton} from '@angular/material/button';
 import {LanguageSwitcherComponent} from '../../../public/components/language-switcher/language-switcher.component';
 import {NgIf} from '@angular/common';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,7 +16,9 @@ import {NgIf} from '@angular/common';
     TranslatePipe,
     MatIconButton,
     LanguageSwitcherComponent,
-    NgIf
+    NgIf,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.css'
@@ -24,7 +27,7 @@ export class ToolbarComponent implements OnInit {
   @Output() toggleSidenav = new EventEmitter<void>();
   studentName: string | null = null;
   studentType: string | null = null;
-
+  nameRoute: string | null = "/home";
   constructor(private http: HttpClient) {}
 
   onToggleSidenav() : void {
