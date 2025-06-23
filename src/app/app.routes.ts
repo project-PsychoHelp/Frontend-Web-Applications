@@ -5,9 +5,11 @@ import {
 } from './student-dashboard/components/recommended-careers/recommended-careers.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
 import {SectionsManagementComponent} from './psychologist-dashboard/pages/sections-management/sections-management.component';
+import {HomeComponent} from './public/pages/home/home.component';
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   { path: 'about', component: PageNotFoundComponent },
   { path: 'student',
   children: [
@@ -23,7 +25,7 @@ export const routes: Routes = [
   {path: 'psychologist',
   children: [
     { path: '', component: PageNotFoundComponent },
-    { path: 'sections', component: SectionsManagementComponent },
+    { path: 'dashboard', component: SectionsManagementComponent },
     { path: '**', component: PageNotFoundComponent }
   ]},
   {path: '**', component: PageNotFoundComponent}
