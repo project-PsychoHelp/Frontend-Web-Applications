@@ -1,0 +1,22 @@
+<div class="dialog-content">
+  <h2>{{ 'CAREERS.DIALOG_TITLE' | translate }}</h2>
+
+  <!-- Career List -->
+  <div class="career-list">
+    <div class="career-item" *ngFor="let career of data.careers">
+      <mat-icon class="career-icon">school</mat-icon>
+      <div class="career-info">
+        <h3>{{ career.name | translate }}</h3>
+        <p>{{ career.description | translate }}</p>
+      </div>
+      <span class="compatibility">{{ career.getCompatibilityLabel() | translate }}</span>
+    </div>
+  </div>
+
+  <!-- Close Button -->
+  <div class="dialog-actions">
+    <button mat-raised-button color="primary" (click)="closeDialog()">
+      {{ 'CAREERS.CLOSE' | translate }}
+    </button>
+  </div>
+</div>

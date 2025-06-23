@@ -1,4 +1,55 @@
 {
+  "APP_NAME": "PsychoHealth",
+  "USER": {
+    "STUDENT": "Student",
+    "PSYCHOLOGIST": "Psychologist"
+  },
+  "PROGRESS": {
+    "TITLE": "Your Progress",
+    "SUBTITLE": "Complete all tests to get accurate recommendations",
+    "GENERAL": "Overall Progress",
+    "COMPLETED_ON": "Completed on",
+    "ESTIMATED_TIME": "minutes approximately",
+    "NAME": {
+      "INTEREST": "Interests Test",
+      "APTITUDES": "Aptitudes Test",
+      "PERSONALITY": "Personality Test"
+    },
+    "STATUS": {
+      "COMPLETED": "Completed",
+      "PENDING": "Pending"
+    }
+  },
+  "CAREERS": {
+    "TITLE": "Recommended Careers",
+    "SUBTITLE": "Based on your tests results",
+    "VIEW_ALL": "View All Recommended Careers",
+    "DIALOG_TITLE": "All Recommended Careers",
+    "CLOSE": "Close",
+    "Ingeniería en Sistemas": "Systems Engineering",
+    "Psicología": "Psychology",
+    "Arquitectura": "Architecture"
+  },
+
+  "92% de coincidencia": "92% match",
+  "87% de coincidencia": "87% match",
+  "83% de coincidencia": "83% match",
+
+  "SIDEBAR": {
+    "DASHBOARD": "Dashboard",
+    "TESTS": "Tests",
+    "CAREERS": "Careers",
+    "SESSIONS": "Sessions",
+    "RESOURCES": "Resources",
+    "PROFILE": "Profile",
+    "SETTINGS": "Settings"
+  },
+
+  "PAGE_NOT_FOUND": {
+    "TITLE": "Page Not Found",
+    "MESSAGE": "The page you are looking for does not exist.",
+    "BACK_TO_DASHBOARD": " Go Back to Dashboard"
+  },
   "footer": {
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",
     "intro": "Developed ",

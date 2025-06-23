@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { TranslateService } from "@ngx-translate/core";
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {Component} from '@angular/core';
+import {TranslateService} from "@ngx-translate/core";
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 
 @Component({
@@ -10,14 +10,14 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
   styleUrl: './language-switcher.component.css'
 })
 export class LanguageSwitcherComponent {
-currentLang: string = 'en';
-languages: string[] = ['en', 'es'];
+  currentLang: string = 'en';
+  languages: string[] = ['en', 'es'];
 
-constructor(private translate: TranslateService) {
-  this.currentLang = translate.currentLang;
-}
+  constructor(private translate: TranslateService) {
+    this.currentLang = translate.currentLang;
+  }
 
-useLanguage(language: string) : void {
-  this.translate.use(language);
-}
+  useLanguage(language: string): void {
+    this.translate.use(language);
+  }
 }

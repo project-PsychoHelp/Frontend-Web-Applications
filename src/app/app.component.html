@@ -1,32 +1,45 @@
-<mat-toolbar color="primary">
-  @if (sidenav.mode === 'over') {
-    <button mat-icon-button (click)="sidenav.toggle()" >
-      @if (sidenav.opened) {
-        <mat-icon>close</mat-icon>
-      } @else {
-        <mat-icon>menu</mat-icon>
-      }
-    </button>
-  }
+<!--<app-header-content></app-header-content> -->
+<div class="layout">
+<app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
+>>>>>>> develop
 
-</mat-toolbar>
-<app-header-content></app-header-content>
-<mat-sidenav-container>
-  <mat-sidenav>
-    <mat-nav-list>
-      @for(option of options; track option.title) {
-        <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" [routerLink]="option.path">
-          <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
-          {{ option.title }}
-        </mat-list-item>
-      }
-    </mat-nav-list>
+  <mat-sidenav-container class="sidenav-container">
+
+  <!-- Sidebar -->
+  <mat-sidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+    fixedTopGap="64">
+    <!--  [fixedInViewport]="true"-->
+    <app-sidebar></app-sidebar>
   </mat-sidenav>
+
+ <!-- Main Content -->
   <mat-sidenav-content>
-    <div class="content">
-      <router-outlet />
-    </div>
+
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
 <app-footer-content></app-footer-content>
+</div>
+<!--<app-header-content></app-header-content> -->
+<div class="layout">
+<app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
+
+  <mat-sidenav-container class="sidenav-container">
+  <!-- Sidebar -->
+  <mat-sidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+    fixedTopGap="64">
+    <!--  [fixedInViewport]="true"-->
+    <app-sidebar></app-sidebar>
+  </mat-sidenav>
+
+ <!-- Main Content -->
+  <mat-sidenav-content>
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+</div>
