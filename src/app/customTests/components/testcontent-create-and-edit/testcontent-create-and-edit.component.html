@@ -1,0 +1,45 @@
+<h4>{{ 'title.edit' | translate }}</h4>
+<div class="form-section">
+
+  <form (submit)="onSubmit()" #testcontentForm="ngForm" class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="{{ 'testcontent.question' | translate }}" name="question" required [(ngModel)]="testcontent.question">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'testcontent.correctAnswer' | translate }}" name="correctAnswer" required [(ngModel)]="testcontent.correctAnswer">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="{{ 'testcontent.explanation' | translate }}" name="explanation" required [(ngModel)]="testcontent.explanation">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" placeholder="{{ 'testcontent.points' | translate }}" name="points" required [(ngModel)]="testcontent.points">
+    </mat-form-field>
+
+    <div>
+      <h5>{{ 'testcontent.options' | translate }}</h5>
+      <div *ngFor="let option of testcontent.options; let i = index; trackBy: trackByIndex" class="option-row">
+        <mat-form-field>
+          <input matInput placeholder="{{ 'testcontent.options' | translate }}" [(ngModel)]="testcontent.options[i]" name="option{{i}}" required>
+        </mat-form-field>
+        <button mat-icon-button color="warn" (click)="removeOption(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <button mat-raised-button color="primary" (click)="addOption()">
+        {{ 'testcontent.addOption' | translate }}
+      </button>
+    </div>
+
+
+    <ng-container>
+      @if (editMode === true) {
+      <button mat-raised-button color="primary">Update</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+      }
+      @else {
+      <button mat-raised-button color="primary">Add</button>
+      }
+    </ng-container>
+  </form>
+
+</div>

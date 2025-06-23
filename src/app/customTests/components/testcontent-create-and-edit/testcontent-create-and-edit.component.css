@@ -1,0 +1,57 @@
+.form-section {
+  max-width: 1600px; /* Limita el ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario en la página */
+  padding: 20px; /* Agrega un poco de espacio interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el formulario */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.form-section {
+  max-width: 1600px; /* Limita el ancho máximo del formulario */
+  margin: 0 auto; /* Centra el formulario en la página */
+  padding: 20px; /* Agrega un poco de espacio interno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar el formulario */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco */
+}
+
+.form-row {
+  display: table-cell;
+  max-width: 2400px;
+}
+
+.form-row .mat-raised-button {
+  margin-right: 8px;
+}
+
+.form-row .mat-form-field {
+  margin-right: 8px;
+}
+
+.form-row #age-form-field {
+  margin-right: 8px;
+  width: 15%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaciado entre filas */
+}
+
+.form-row {
+  display: flex;
+  gap: 20px; /* Espaciado entre campos */
+}
+
+mat-form-field {
+  flex: 1; /* Asegura que los campos ocupen el mismo ancho */
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px; /* Espaciado entre botones */
+}
+

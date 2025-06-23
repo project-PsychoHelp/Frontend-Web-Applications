@@ -3,5 +3,6 @@ export const environment = {
   // EJEMPLO SIEMPRE VER TU BASE PATH Y ENDPOINT
   serverBasePath: 'http://localhost:3000/api/v1',
   studentsEndpointPath: '/students',
-  sectionsEndpointPath: '/sections'
+  sectionsEndpointPath: '/sections',
+  testsEndpointPath: '/tests',
   };
