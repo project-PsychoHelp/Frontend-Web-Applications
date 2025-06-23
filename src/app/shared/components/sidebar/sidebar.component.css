@@ -1,7 +1,10 @@
 mat-nav-list {
   padding-top: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  //background-color: #d31717;
+  margin-left: 20px;
+  margin-right: 5px;
 }
 
 a {

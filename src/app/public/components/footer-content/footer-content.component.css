@@ -3,10 +3,5 @@
   color: #fff;
   text-align: center;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 80px;
-  z-index: 1000;
+  position: static;
 }

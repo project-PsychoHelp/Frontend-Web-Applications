@@ -8,21 +8,11 @@
   background-color: #f5f7fa;
 }
 
-.content-row {
-  display: flex;
-  flex: 1;
-}
 mat-sidenav {
   width: 270px;
   background: #f5f7fa;
 }
 
-.main-content {
-  flex: 1;
-  padding: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
 
 @media (max-width: 800px) {
   .sidebar {
@@ -32,10 +22,6 @@ mat-sidenav {
     left: 0;
     z-index: 1000;
     height: calc(100vh - 64px - 80px);
-  }
-
-  .main-content {
-    margin-left: 0;
   }
 
 }
