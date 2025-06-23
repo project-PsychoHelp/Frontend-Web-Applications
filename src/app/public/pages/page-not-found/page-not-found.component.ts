@@ -15,8 +15,8 @@ import {MatButton} from '@angular/material/button';
 export class PageNotFoundComponent {
   constructor(private router: Router) { }
 
-  gotToDashboard() {
-    this.router.navigate(['/dashboard']);
+  goToPreviousPage() {
+    window.history.back();
   }
 
 }
