@@ -4,7 +4,7 @@ import {
   RecommendedCareersComponent
 } from './student-dashboard/components/recommended-careers/recommended-careers.component';
 import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-found.component';
-import {SectionsManagementComponent} from './psicologist/pages/sections-managament/sections-managament.component';
+import {SectionsManagementComponent} from './psychologist-dashboard/pages/sections-managament/sections-managament.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
