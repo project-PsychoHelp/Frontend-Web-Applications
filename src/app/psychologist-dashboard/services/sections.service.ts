@@ -2,36 +2,46 @@ import { Injectable } from '@angular/core';
 import { BaseService } from "../../shared/services/base.service";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { Sections } from "../model/sections.entity";
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SectionsService extends BaseService<Sections> {
-
   constructor(http: HttpClient) {
     super(http);
     this.resourceEndpoint = '/sections';
+    this.basePath = environment.serverBasePath; // Ensure basePath is set
   }
 
-  // Métodos adicionales específicos para sections si los necesitas
+  // New method to fetch all sections as an array
+  getAllSections(): Observable<Sections[]> {
+    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}`, this.httpOptions)
+      .pipe(
+        retry(2),
+        catchError(this.handleError)
+      );
+  }
 
-  // Obtener secciones por fecha
+
+  // Métodos adicionales específicos para sections
   getSectionsByDate(date: string): Observable<Sections[]> {
-    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?date=${date}`);
+    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?date=${date}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  // Obtener secciones por estudiante
   getSectionsByStudentId(studentId: number): Observable<Sections[]> {
-    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?studentId=${studentId}`);
+    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?studentId=${studentId}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  // Obtener secciones por estado
   getSectionsByStatus(status: string): Observable<Sections[]> {
-    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?status=${status}`);
+    return this.http.get<Sections[]>(`${this.basePath}${this.resourceEndpoint}?status=${status}`, this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
-  // Actualizar estado de una sección específicamente
   updateSectionStatus(id: number, status: string): Observable<Sections> {
     return this.update(id, { status } as Partial<Sections>);
   }
