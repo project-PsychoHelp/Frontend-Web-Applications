@@ -1,23 +1,21 @@
 <!--<app-header-content></app-header-content> -->
 <div class="layout">
-<app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
+  <app-toolbar (toggleSidenav)="toggleSidenav()"></app-toolbar>
 
   <mat-sidenav-container class="sidenav-container">
+    <!-- Sidebar -->
+    <mat-sidenav
+      mode="side"
+      [opened]="isSidenavOpen"
+      fixedTopGap="64">
+      <!--  [fixedInViewport]="true"-->
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
 
-  <!-- Sidebar -->
-  <mat-sidenav
-    mode="side"
-    [opened]="isSidenavOpen"
-    fixedTopGap="64">
-    <!--  [fixedInViewport]="true"-->
-    <app-sidebar></app-sidebar>
-  </mat-sidenav>
+    <!-- Main Content -->
+    <mat-sidenav-content>
 
- <!-- Main Content -->
-  <mat-sidenav-content>
-
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<app-footer-content></app-footer-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>

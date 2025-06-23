@@ -1,0 +1,125 @@
+<div class="session-form-container">
+  <div class="form-header">
+    <h2>{{ editMode ? 'Editar Sesión' : 'Nueva Sesión' }}</h2>
+  </div>
+
+  <form #sessionForm="ngForm" (ngSubmit)="onSubmit()" class="session-form">
+
+    <!-- Tipo de Sesión -->
+    <div class="form-group">
+      <label for="sessionType">Tipo de Sesión *</label>
+      <select [(ngModel)]="sections.type"
+              name="type"
+              id="sessionType"
+              required
+              class="form-control">
+        <option value="">Seleccionar tipo</option>
+        <option *ngFor="let type of sessionTypes" [value]="type.value">
+          {{ type.label }}
+        </option>
+      </select>
+    </div>
+
+    <!-- ID del Estudiante -->
+    <div class="form-group">
+      <label for="studentId">ID del Estudiante *</label>
+      <input type="number"
+             [(ngModel)]="sections.studentId"
+             name="studentId"
+             id="studentId"
+             class="form-control"
+             placeholder="Ingrese el ID del estudiante"
+             required>
+    </div>
+
+    <!-- Fecha y Horarios -->
+    <div class="form-row">
+      <div class="form-group col-4">
+        <label for="date">Fecha *</label>
+        <input type="date"
+               [(ngModel)]="sections.date"
+               name="date"
+               id="date"
+               class="form-control"
+               required>
+      </div>
+
+      <div class="form-group col-4">
+        <label for="startTime">Hora de Inicio *</label>
+        <input type="time"
+               [(ngModel)]="sections.time"
+               name="time"
+               id="startTime"
+               class="form-control"
+               required>
+      </div>
+
+      <div class="form-group col-4">
+        <label for="endTime">Hora de Fin *</label>
+        <input type="time"
+               [(ngModel)]="sections.endTime"
+               name="endTime"
+               id="endTime"
+               class="form-control"
+               required>
+      </div>
+    </div>
+
+    <!-- Estado y Modalidad -->
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label for="status">Estado *</label>
+        <select [(ngModel)]="sections.status"
+                name="status"
+                id="status"
+                required
+                class="form-control">
+          <option value="">Seleccionar estado</option>
+          <option *ngFor="let status of sessionStatuses" [value]="status.value">
+            {{ status.label }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group col-6">
+        <label for="mode">Modalidad *</label>
+        <select [(ngModel)]="sections.mode"
+                name="mode"
+                id="mode"
+                required
+                class="form-control">
+          <option value="">Seleccionar modalidad</option>
+          <option *ngFor="let mode of sessionModes" [value]="mode.value">
+            {{ mode.label }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Notas -->
+    <div class="form-group">
+      <label for="notes">Notas</label>
+      <textarea [(ngModel)]="sections.notes"
+                name="notes"
+                id="notes"
+                class="form-control"
+                rows="4"
+                placeholder="Notas adicionales sobre la sesión"></textarea>
+    </div>
+
+    <!-- Botones de Acción -->
+    <div class="form-actions">
+      <button type="button"
+              (click)="onCancel()"
+              class="btn btn-secondary">
+        Cancelar
+      </button>
+      <button type="submit"
+              [disabled]="!sessionForm.form.valid"
+              class="btn btn-primary">
+        {{ editMode ? 'Actualizar' : 'Crear' }} Sesión
+      </button>
+    </div>
+
+  </form>
+</div>

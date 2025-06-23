@@ -1,0 +1,42 @@
+
+<mat-card class="agenda-container">
+  <mat-card-title>Agenda de hoy</mat-card-title>
+  <mat-card-subtitle>{{ currentDate | date: 'fullDate' }}</mat-card-subtitle>
+  <mat-card-content>
+
+      <div *ngFor="let sections of filteredSections" class="agenda-item" [ngClass]="{'pending': sections.status === 'Pendiente'}">
+        <div class="agenda-left">
+          <div class="profile-placeholder"></div>
+          <div class="session-info">
+            <h4>{{ sections.studentId }}</h4>
+            <p>{{ sections.type }}</p>
+            <p>
+              🕒 {{ sections.time }} - {{ sections.endTime }}
+              &nbsp;•&nbsp;
+              {{ sections.mode }}
+            </p>
+          </div>
+        </div>
+        <div class="agenda-actions">
+          <button mat-raised-button color="primary" *ngIf="sections.status === 'Confirmada'">Unirse ahora</button>
+          <button mat-stroked-button color="accent" (click)="onEditItem(sections)">Reprogramar</button>
+          <button mat-stroked-button color="warn" *ngIf="sections.status === 'Pendiente'" (click)="onDeleteItem(sections)">Cancelar</button>
+        </div>
+        <span class="status-tag" [ngClass]="sections.status === 'Confirmada' ? 'status-confirmed' : 'status-pending'">
+          {{ sections.status }}
+        </span>
+        <div *ngIf="editingSectionId === sections.id" class="edit-form-container">
+          <app-sections-create-and-edit
+            [sections]="sectionData"
+            [editMode]="isEditMode"
+            (sectionUpdated)="onStudentUpdated($event)"
+            (editCanceled)="onCancelEdit()">
+          </app-sections-create-and-edit>
+        </div>
+      </div>
+
+    <ng-template #noSessions>
+      <p>No hay sesiones programadas para hoy.</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
