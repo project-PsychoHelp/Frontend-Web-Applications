@@ -42,13 +42,44 @@
     "SESSIONS": "Sessions",
     "RESOURCES": "Resources",
     "PROFILE": "Profile",
-    "SETTINGS": "Settings"
+    "SETTINGS": "Settings",
+    "HOME": "Home",
+    "PATIENTS": "Patients"
   },
-
+  "LOG_OUT": "Log Out",
+  "PREMIUM": {
+    "PLAN": "Premium Plan",
+    "REGISTER": "Register into the Premium Plan",
+    "BUY": "Buy"
+  },
+  "CHANGE_USER_TYPE": "Change user type",
   "PAGE_NOT_FOUND": {
     "TITLE": "Page Not Found",
     "MESSAGE": "The page you are looking for does not exist.",
-    "BACK_TO_DASHBOARD": " Go Back to Dashboard"
+    "GO_BACK": "Go Back"
+  },
+
+  "PSYCHOLOGIST_HOME": {
+    "TITLE": "Welcome to the Psychologist Interface!",
+    "SUBTITLE": "Manage your patients, sessions and get access to tools to enhance your professional work.",
+    "DASHBOARD": "Dashboard",
+    "DASHBOARD_DESC": "View statistics, schedules, and the overall status of your patients and sessions.",
+    "PATIENTS": "Patients",
+    "PATIENTS_DESC": "Access and manage your patients' profiles, progress, and session history.",
+    "SESSIONS": "Sessions",
+    "SESSIONS_DESC": "Manage and organize your sessions effectively and keep track of your patients' progress.",
+    "MESSAGE": "Ready to start? Use the sidebar to navigate through the different sections and bring the best support for your patients."
+  },
+  "STUDENT_HOME": {
+    "TITLE": "Welcome to PsychoHealth!",
+    "SUBTITLE": "Discover your potential and find the career that suits you best.",
+    "DASHBOARD": "Personal dashboard",
+    "DASHBOARD_DESC": "View your progress, completed tests, and recommended careers based on your results.",
+    "TESTS": " Specialized tests",
+    "TESTS_DESC": "Take tests to discover your interests, aptitudes, and personality traits.",
+    "SESSIONS": "Sessions with experts",
+    "SESSIONS_DESC": "Schedule and manage your sessions with psychologists for personalized guidance.",
+    "MESSAGE": "Ready to start? Use the sidebar to navigate through the different sections and take the first step towards your future."
   },
   "footer": {
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",

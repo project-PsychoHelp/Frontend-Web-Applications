@@ -42,16 +42,47 @@
     "SESSIONS": "Sesiones",
     "RESOURCES": "Recursos",
     "PROFILE": "Mi perfil",
-    "SETTINGS": "Configuración"
+    "SETTINGS": "Configuración",
+    "HOME": "Inicio",
+    "PACIENTES": "Pacientes"
   },
+  "LOG_OUT": "Cerrar sesión",
+  "PREMIUM": {
+    "PLAN": "Plan Premium",
+    "REGISTER": "Registrate para el plan premium",
+    "BUY": "Comprar"
+  },
+  "CHANGE_USER_TYPE": "Cambiar tipo de usuario",
   "PAGE_NOT_FOUND": {
     "TITLE": "Página no encontrada",
     "MESSAGE": "La página que estás buscando no existe.",
-    "BACK_TO_DASHBOARD": "Volver al Panel"
+    "GO_BACK": "Regresar"
+  },
+  "PSYCHOLOGIST_HOME": {
+    "TITLE": "¡Bienvenido/a al Portal del Psicólogo!",
+    "SUBTITLE": "Gestiona tus pacientes, sesiones y accede a herramientas para potenciar tu labor profesional.",
+    "DASHBOARD": "Panel de control",
+    "DASHBOARD_DESC": "Visualiza estadísticas, agenda y el estado general de tus pacientes y sesiones.",
+    "PATIENTS": "Pacientes",
+    "PATIENTS_DESC": "Accede al listado de pacientes, consulta sus perfiles y realiza seguimientos personalizados.",
+    "SESSIONS": "Sesiones",
+    "SESSIONS_DESC": "Gestiona y organiza tus sesiones de manera eficiente y profesional.",
+    "MESSAGE": "¿Listo para comenzar? Usa el menú lateral para explorar cada sección y brindar el mejor acompañamiento a tus pacientes."
+  },
+  "STUDENT_HOME": {
+    "TITLE": "¡Bienvenido/a a PsychoHealth!",
+    "SUBTITLE": "Descubre todas las herramientas que te ayudarán a crecer, aprender y alcanzar tus metas.",
+    "DASHBOARD": "Panel de control personal",
+    "DASHBOARD_DESC": "Visualiza tus estadísticas, avances y logros de manera clara y motivadora.",
+    "TESTS": "Tests especializados",
+    "TESTS_DESC": "Realiza tests de intereses, aptitudes y personalidad para conocerte mejor.",
+    "SESSIONS": "Sesiones con profesionales",
+    "SESSIONS_DESC": "Agenda y gestiona tus sesiones de apoyo con profesionales dedicados a tu bienestar.",
+    "MESSAGE": "¿Listo para comenzar? Usa el menú lateral para navegar por las secciones y potenciar tu futuro."
   },
   "footer": {
     "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
     "intro": "Desarrollado ",
-    "author": "por el Equipo PyschoMetric"
+    "author": "por el Equipo PsychoMetric"
   }
 }
