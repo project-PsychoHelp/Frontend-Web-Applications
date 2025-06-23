@@ -3,33 +3,5 @@
     "rights": "Derechos de autor © 2025 {{ api }}, Todos los derechos reservados",
     "intro": "Desarrollado ",
     "author": "por el Equipo PyschoMetric"
-  },
-
-  "test": {
-    "title": "Título",
-    "description": "Descripción",
-    "category": "Categorías",
-    "recommendationPercentage": "Porcentaje de Recomendación",
-    "numberOfQuestions": "Número de Preguntas",
-    "isFree": "Es gratis"
-  },
-  "testcontent": {
-    "id": "ID",
-    "question": "Pregunta",
-    "options": "Añadir opciones",
-    "correctAnswer": "Respuesta Correcta",
-    "explanation": "Explicación",
-    "points": "Puntos",
-    "addOption": "Aumentar opción"
-  },
-
-
-  "title": {
-    "tests": "CATALOGO DE TEST",
-    "add": "New Student",
-    "edit": "AÑADIR NUEVOS TIPOS DE TEST",
-    "testcontents": "AÑADIR NUEVOS CONTENIDOS DE TEST",
-    "content": "APARTADO DE PREGUNTAS DE TEST"
-
   }
 }

@@ -1,25 +1,46 @@
-<app-header-content></app-header-content>
+<div class="parent">
 
 
-<mat-sidenav-container>
-  <mat-sidenav>
+  <div class="div1">
+    <app-header-content></app-header-content>
+  </div>
+
+
+  <div class="div2">
+    <!-- Barra lateral aquí -->
     <mat-nav-list>
-      @for(option of options; track option.title) {
-      <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" [routerLink]="option.path">
-        <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
-        {{ option.title }}
-      </mat-list-item>
-      }
+      <button mat-button (click)="toggleOptions()">
+        Cambiar tipo de usuario
+      </button>
+      <mat-nav-list class="sidebar-options">
+        @for(option of options; track option.title) {
+        <mat-list-item (click)="sidenav.mode === 'over' && sidenav.toggle()" [routerLink]="option.path">
+          <mat-icon matListItemIcon>{{ option.icon }}</mat-icon>
+          {{ option.title }}
+        </mat-list-item>
+        }
+      </mat-nav-list>
+      <div class="spacer"></div>
+      <button mat-stroked-button color="warn">
+        Cerrar sesión
+      </button>
+      <div class="premium-block">
+        <div class="premium-title">Plan premium</div>
+        <div class="premium-desc">Regístrate para el plan premium</div>
+        <button mat-raised-button color="primary">Comprar</button>
+      </div>
     </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="content">
-      <router-outlet />
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </div>
 
 
+  <div class="div3">
+    <!-- Contenido principal aquí -->
+    <router-outlet></router-outlet>
+  </div>
 
 
-<app-footer-content></app-footer-content>
+  <div class="div4">
+    <!-- Footer aquí -->
+    <app-footer-content></app-footer-content>
+  </div>
+</div>

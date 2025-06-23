@@ -3,33 +3,6 @@
     "rights": "Copyright © 2025 {{ api }}, All rights reserved",
     "intro": "Developed ",
     "author": "by {{ team }} Team"
-  },
-
-  "test": {
-    "title": "Title",
-    "description": "Description",
-    "category": "Category",
-    "recommendationPercentage": "Recommendation Percentage",
-    "numberOfQuestions": "Number of Questions",
-    "isFree": "Is Free"
-  },
-
-  "testcontent": {
-    "id": "ID",
-    "question": "Question",
-    "options": "Add Options",
-    "correctAnswer": "Correct Answer",
-    "explanation": "Explanation",
-    "points": "Points",
-    "addOption": "More options"
-  },
-
-  "title": {
-    "tests": "TEST CATALOG",
-    "add": "New Student",
-    "edit": "ADD NEW TEST TYPES",
-    "testcontents": "ADD NEW CONTEST TEST",
-    "content": "TEST QUESTION SECTION"
   }
 }
 

@@ -28,11 +28,31 @@ export class AppComponent implements OnInit  {
   @ViewChild(MatSidenav, {static: true}) sidenav!: MatSidenav;
 
 
-  options =[
-    { icon: 'test', path: '/customTests/tests', title: 'Tests'},
-    { icon: 'test', path: '/customTests/testscontent', title: 'Testscontent'},
+  options_student = [
+    { title: 'Inicio', path: '/inicio-student', icon: 'home' },
+    { title: 'Mi Perfil', path: '/perfil', icon: 'person' },
+    { title: 'Mis Test', path: '/test', icon: 'quiz' },
+    { title: 'Sesiones', path: '/sesiones-student', icon: 'schedule' },
+    { title: 'Dashboard Student', path: '/student-dashboard', icon: 'dashboard' },
+    { title: 'Configuración', path: '/configuration-student', icon: 'settings'},
+  ];
 
-    ]
+  options_psychologist = [
+    { title: 'Inicio', path: '/inicio-psychologist', icon: 'home' },
+    { title: 'Mi Perfil', path: '/perfil', icon: 'person' },
+    { title: 'Sesiones', path: '/sesiones-psychologist', icon: 'schedule' },
+    { title: 'Dashboard', path: '/dashboard', icon: 'dashboard' },
+    { title: 'Pacientes', path: '/pacientes', icon: 'group' },
+    { title: 'Configuración', path: '/configuration-student', icon: 'settings'},
+  ];
+
+  options = this.options_student;
+
+  toggleOptions() {
+    this.options = this.options === this.options_student ? this.options_psychologist : this.options_student;
+  }
+
+
 
   constructor(private translate: TranslateService, private observer: BreakpointObserver) {
     translate.setDefaultLang('en');

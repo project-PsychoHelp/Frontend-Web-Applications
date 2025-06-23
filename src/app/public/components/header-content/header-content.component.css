@@ -11,3 +11,19 @@
           font-size: 1.6rem; /* Ajusta el tamaño según lo que necesites */
           font-weight: bold;
         }
+
+:host {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  width: 100%;
+  background: #fff !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  z-index: 10;
+}
+:host > * {
+  background: #fff !important;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
