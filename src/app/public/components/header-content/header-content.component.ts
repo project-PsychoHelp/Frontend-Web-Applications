@@ -6,16 +6,20 @@ import { LanguageSwitcherComponent } from "../language-switcher/language-switche
 import {RouterLinkActive, RouterLink, Router, NavigationEnd} from '@angular/router';
 import {Subscription} from 'rxjs';
 
+import {AuthenticationSectionComponent} from '../../../iam/components/authentication-section/authentication-section.component';
+import {AuthenticationService} from '../../../iam/services/authentication.service';
+
 @Component({
   selector: 'app-header-content',
-  imports: [MatToolbarModule, MatButtonModule, MatIconModule, LanguageSwitcherComponent, RouterLinkActive, RouterLink],
+  imports: [MatToolbarModule, MatButtonModule, MatIconModule, LanguageSwitcherComponent, RouterLinkActive, RouterLink,
+    AuthenticationSectionComponent],
   templateUrl: './header-content.component.html',
   styleUrl: './header-content.component.css'
 })
 export class HeaderContentComponent implements OnInit, OnDestroy {
-  nameRoute: string = '/student/home';
+  nameRoute: string = '/home';
   private routerSub?: Subscription;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authenticationService: AuthenticationService) {}
 
   ngOnInit() {
     this.setNameRoute(this.router.url);
